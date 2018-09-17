@@ -9,7 +9,7 @@ layout: default
     <h3 class="post-title" itemprop="name headline" style="text-align:center">{{ page.title | escape }}</h3>
 
     <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" style = "margin: auto">
         {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
         {{ page.date | date: date_format }}
       </time>
@@ -17,7 +17,7 @@ layout: default
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
       {% endif %}</p>
 
-  <div class="post-content" itemprop="articleBody" style = "width: 800px; margin: auto; font-size: 1.5em;">
+  <div class="post-content" itemprop="articleBody" style = "width: 800px; margin: auto; font-size: 1.0em;">
     {{ content }}
   </div>
 </div>
