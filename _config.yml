@@ -1,7 +1,7 @@
 title: HCI, 2018 Fall #Your awesome title
 name: 김석환 #Your Name
 email: your-email@example.com
-description: 인간컴퓨터상호작용입문 강의를 위한 블로그 #Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+description: 인간컴퓨터상호작용입문 강의를 위한 블로그 [2013190731 김석환] #Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 
 baseurl: ""
 url: ""
