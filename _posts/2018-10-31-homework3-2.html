@@ -2,7 +2,7 @@
 layout: post
 title:  "Homework 3 - Resume Authoring"
 date:   2018-10-31 21:15:05 +0000
-image: /assets/images/contact4.jpg
+image: /assets/images/contact4.png
 
 ---
 
@@ -30,13 +30,12 @@ image: /assets/images/contact4.jpg
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
+    <div class="col-lg-12 col-md-12 mx-auto">
 
       <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="keywords" content="박선우,고려대학교,컴퓨터학과" />
 		<link href="default.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&amp;subset=korean" rel="stylesheet">
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -257,7 +256,7 @@ image: /assets/images/contact4.jpg
 			</fieldset>
 
 			<fieldset>
-				<legend>6. Experience</legend>
+				<legend>6. 경력</legend>
 				<input type="button" id="exp_add" onclick="button2_click();" value="Add entry"/>
 				<input type="button" id="exp_rem" onclick="button5_click();" value="Remove entry"/>
 				<script>
@@ -291,9 +290,9 @@ image: /assets/images/contact4.jpg
 
 				<table id="exp_entry">
 					<thead>
-						<td>Organization</td>
-						<td>Duty</td>
-						<td>Duration</td>
+						<td>조직,기관명</td>
+						<td>직책</td>
+						<td>기간</td>
 					</thead>
 					<tbody>
 						<tr>
@@ -306,7 +305,7 @@ image: /assets/images/contact4.jpg
 			</fieldset>
 
 			<fieldset>
-				<legend>7. Skills</legend>
+				<legend>7. 능력</legend>
 				<input type="button" id="skill_add" onclick="button3_click();" value="Add entry"/>
 				<input type="button" id="skill_rem" onclick="button6_click();" value="Remove entry"/>
 				<script>
@@ -342,9 +341,9 @@ image: /assets/images/contact4.jpg
 
 				<table id="skill_entry">
 					<thead>
-						<td>Field</td>
-						<td>Skill level</td>
-						<td>Detail</td>
+						<td>분야</td>
+						<td>Level</td>
+						<td>상세설명</td>
 					</thead>
 					<tbody>
 						<tr>
@@ -360,17 +359,17 @@ image: /assets/images/contact4.jpg
 			</fieldset>
 
 			<fieldset>
-				<legend>8. Others</legend>
+				<legend>8. 기타설정</legend>
 				<table>
-					<tr><td>Background color</td><td><input type="color" id="bgcolor" value="#ffffff" /></td></tr>
-					<tr><td>Font color</td><td><input type="color" id="fcolor"/></td></tr>
-					<tr><td>Font size</td><td>0em<input type="range" id="pont" min="0" max="3" value="1" step="0.1"/>3em
+					<tr><td>배경 색</td><td><input type="color" id="bgcolor" value="#ffffff" /></td></tr>
+					<tr><td>글자 색</td><td><input type="color" id="fcolor"/></td></tr>
+					<tr><td>글자 크기</td><td>0em<input type="range" id="pont" min="0" max="3" value="1" step="0.1"/>3em
 					</td></tr>
 				</table>
 			</fieldset>
 
 
-			<table><tr><td><input type="button" id="test" value="Make resume!" onclick="showResume();"/> <input  type="reset" value="reset"/></td></tr></table>
+			<table><tr><td><input type="button" id="test" value="완료" onclick="showResume();"/> <input  type="초기화" value="reset"/></td></tr></table>
 
 
 
@@ -380,7 +379,7 @@ image: /assets/images/contact4.jpg
 
 	<section id="result" style="width: 70%; border: 3px solid black; margin: 40px auto; visibility: hidden; height: 0px; width: 600px;">
 		<div style="text-align: center;">
-			<h3>Resume</h3>
+			<h3>RESUME</h3>
 			<hr>
 		</div>
 		<div id ="forFontSize">
@@ -441,7 +440,7 @@ image: /assets/images/contact4.jpg
 
 
     <!-- Footer -->
-
+<!--
 <hr>
 
 <footer>
@@ -474,7 +473,7 @@ image: /assets/images/contact4.jpg
 <script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
 
 <script src="/assets/scripts.js"></script>
-
+-->
 
 
 
