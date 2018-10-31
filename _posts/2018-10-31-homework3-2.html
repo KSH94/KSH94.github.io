@@ -1,16 +1,15 @@
 ---
 layout: post
-title:  "Homework 3-Resume Authoring"
-date:   2018-10-31 21:15:05 +0000
+title: "Homework 3-Resume Authoring"
+date: 2018-10-31 21:15:05 +0000
 image: /assets/images/startup3.jpg
 
 ---
 
-<!DOCTYPE html>
 
 <html>
 
-  <head>
+<head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,447 +22,443 @@ image: /assets/images/startup3.jpg
   <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://powerberry1.github.io/2018/11/02/HCI-4%EC%B0%A8-%EA%B3%BC%EC%A0%9C.html">
+  <link rel="canonical" href="https://ksh94.github.io/2018/10/31/homework3-2/">
   <link rel="alternate" type="application/rss+xml" title="Powerberry" href="/feed.xml">
 
 </head>
 
 
-  <body>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-
-      <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="keywords" content="김석환,고려대학교,컴퓨터학과" />
-		<link href="default.css" rel="stylesheet" type="text/css" media="all" />
-		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&amp;subset=korean" rel="stylesheet">
-		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-		<script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
-	</head>
-
-	<body>
-
-			<script language="javascript">
-
-
-				function toggleVisibility(id) {
-					var dom = document.getElementById(id);
-					if(dom.style.visibility != "hidden"){
-						dom.style.visibility = "hidden";
-						dom.style.height="0px";
-					}
-					else if(dom.style.visibility == "hidden"){
-						dom.style.visibility = "visible";
-						dom.style.height="auto";
-					}
-				}
-
-
-
-				function showResume() {
-					var re_firstName = document.getElementById("first_name").value;
-					var re_middleName = document.getElementById("Middle_name").value;
-					var re_lastName = document.getElementById("Last_name").value;
-					var re_phone = document.getElementById("phone").value;
-					var re_email = document.getElementById("mail").value;
-					var re_address = document.getElementById("address").value;
-					var re_home = document.getElementById("home").value;
-
-					var re_goal = document.getElementById("goal").value;
-
-					var edu_length = $('#edu_entry tbody tr').length;
-					var exp_length = $('#exp_entry tbody tr').length;
-					var ski_length = $('#skill_entry tbody tr').length;
-
-					var re_bg = document.getElementById("bgcolor").value;
-					var re_fc = document.getElementById("fcolor").value;
-					var re_fs = document.getElementById("pont").value;
-					re_fs += "em";
-
-					var message = "Check it out!\n"+"Name: "+re_firstName+" "+re_middleName+" "+re_lastName+"\nPhone#: "+re_phone+"\nE-mail: "+re_email+"\nAddress: "+re_address+"\nHomepage: "+re_home+"\nCareer goal: "+re_goal;
-
-					alert(message);
-
-					var re_education="";
-					for(i = 1; i < edu_length+1; i++){
-						var id_school = "school" + i;
-						re_education +=  document.getElementById(id_school).value;
-						var id_major = "major" + i;
-						re_education += document.getElementById(id_major).value;
-						var id_addm = "addm" + i;
-						re_education +=  "  ("+document.getElementById(id_addm).value;
-						var id_grad = "grad" + i;
-						re_education +=  "~"+document.getElementById(id_grad).value;
-						var id_gpa = "gpa" + i;
-						re_education +=  ")  GPA: "+document.getElementById(id_gpa).value;
-						re_education += "<br>";
-					}
-
-
-					var re_experience="";
-					for(i = 1; i < exp_length+1; i++){
-						var id_organization = "org" + i;
-						re_experience +=  document.getElementById(id_organization).value+" ";
-						var id_duty = "duty" + i;
-						re_experience += document.getElementById(id_duty).value;
-						var id_start = "start" + i;
-						re_experience +=  "  ("+document.getElementById(id_start).value;
-						var id_finish = "finish" + i;
-						re_experience +=  "~"+document.getElementById(id_finish).value+")";
-						re_experience += "<br>";
-					}
-
-
-					var re_skill="";
-					for(i = 1; i < ski_length+1; i++){
-						var id_field = "field" + i;
-						re_skill +=  document.getElementById(id_field).value;
-						var id_sl = "skill_level" + i;
-						re_skill += " - "+document.getElementById(id_sl).value;
-						var id_detail = "detail" + i;
-						re_skill +=  "  ("+document.getElementById(id_detail).value+")";
-						re_skill += "<br>";
-					}
-
-
-					document.getElementById("resume_name").innerHTML = re_lastName+" "+re_middleName+" "+re_firstName;
-					document.getElementById("resume_phone").innerHTML = re_phone;
-					document.getElementById("resume_email").innerHTML = re_email;
-					document.getElementById("resume_address").innerHTML = re_address;
-
-
-					document.getElementById("resume_obj").innerHTML = re_goal;
-
-					document.getElementById("resume_edu").innerHTML = re_education;
-					document.getElementById("resume_exp").innerHTML = re_experience;
-					document.getElementById("resume_ski").innerHTML = re_skill;
-
-					document.getElementById("result").style.backgroundColor = re_bg;
-					document.getElementById("result").style.color = re_fc;
-					document.getElementById("forFontSize").style.fontSize = re_fs;
-					toggleVisibility("section");
-					toggleVisibility("result");
-				}
-			</script>
-
-		<div id="header-wrapper">
-
-
-		<section style="margin:40px">
-			<h2>이력서 작성</h2>
-
-<div id="section">
-			<!--form method="post" action=""!-->
-			<fieldset id="name_section">
-			<legend>1. 이름</legend>
-			<table>
-			<tr><td>성 </td><td><input type="text" id="first_name" size="40" value=""/></td></tr>
-			<tr><td>이름 </td><td> <input type="text" id="Last_name" size="40" value=""/></td></tr>
-			</table>
-			</fieldset>
-
-<script type="text/javascript">
-     function LoadImg(value) {
-          if(value.files && value.files[0]) {
-               var reader = new FileReader();
-               reader.onload = function (e) {
-                    $('#resume_photo').attr('src', e.target.result);
-               }
-               reader.readAsDataURL(value.files[0]);
-          }
-     }
-</script>
-
-			<fieldset>
-				<legend>2. 사진</legend>
-				<input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg(this);"><
-
-			</fieldset>
-
-			<fieldset>
-				<legend>3. 연락처 </legend>
-				<table>
-				<tr><td>핸드폰</td><td><input type="tel" id="phone" size="30" placeholder="000-0000-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" ></td></tr>
-				<tr><td>E-mail</td><td><input type="email" id="mail" size="30" placeholder="aaa@naver.com"/></td></tr>
-				<tr><td>E-mail</td><td><input type="text" id="address" size="30" value=""/></td></tr>
-				<tr><td>홈페이지</td><td><input type="url" id="home" size="30" value="http://"/></td></tr>
-				</table>
-			</fieldset>
-
-			<fieldset>
-				<legend>4. 목표</legend>
-				<textarea  id="goal"  cols="50" rows="5" placeholder="Write down your career goal." ></textarea><br/>
-			</fieldset>
-
-			<fieldset>
-				<legend>5. 학적</legend>
-
-				<input type="button" id="edu_add" onclick="button1_click();" value="목록 추가"/>
-				<input type="button" id="edu_rem" onclick="button4_click();" value="목록 제거"/>
-				<script>
-					function button1_click() {
-						var entryNum = $('#edu_entry tbody tr').length;
-						entryNum++;
-						var rowItem = "<tr>";
-						rowItem += "<td><input type=\"text\" id=\"school";
-						rowItem += entryNum;
-						rowItem += "\" size=\"30\"/></td>";
-						rowItem += "<td><input type=\"text\" id=\"major";
-						rowItem += entryNum;
-						rowItem += "\" size=\"30\"/></td>";
-						rowItem += "<td><input type=\"date\" id=\"addm";
-						rowItem += entryNum;
-						rowItem += "\"/></td>";
-						rowItem += "<td><input type=\"date\" id=\"grad";
-						rowItem += entryNum;
-						rowItem += "\"/></td>";
-						rowItem += "<td><input type=\"text\" id=\"gpa";
-						rowItem += entryNum;
-						rowItem += "\" size=\"30\"/></td>";
-						rowItem += "</tr>";
-						$('#edu_entry').append(rowItem);
-					}
-
-					function button4_click(){
-						if( $('#edu_entry tbody tr').length >1){
-							$('#edu_entry tr:last').remove();
-						}
-						else{
-							alert($('#edu_entry tbody tr').length+'No entry in a education section!');
-						}
-					}
-				</script>
-
-				<table id="edu_entry">
-					<thead>
-						<td>학교명</td>
-						<td>전공</td>
-						<td>입학날짜</td>
-						<td>졸업날짜</td>
-						<td>평점</td>
-					</thead>
-					<tbody>
-						<tr>
-							<td><input type="text" id="school1" size="30" value=""/></td>
-							<td><input type="text" id="major1" size="30" value=""/></td>
-							<td><input type="date" id="addm1" value=""/></td>
-							<td><input type="date" id="grad1" value=""/></td>
-							<td><input type="text" id="gpa1" size="30" value=""/></td>
-						</tr>
-					</tbody>
-				</table>
-			</fieldset>
-
-			<fieldset>
-				<legend>6. 경력</legend>
-				<input type="button" id="exp_add" onclick="button2_click();" value="목록 추가"/>
-				<input type="button" id="exp_rem" onclick="button5_click();" value="목록 제거"/>
-				<script>
-					function button2_click() {
-						var ex_entryNum = $('#exp_entry tbody tr').length;
-						ex_entryNum++;
-						var rowItem = "<tr>";
-						rowItem += "<td><input type=\"text\" id=\"org";
-						rowItem += ex_entryNum;
-						rowItem += "\" size=\"30\"/></td>";
-						rowItem += "<td><input type=\"text\" id=\"duty";
-						rowItem += ex_entryNum;
-						rowItem += "\" size=\"30\"/></td>";
-						rowItem += "<td><input type=\"date\" id=\"start";
-						rowItem += ex_entryNum;
-						rowItem += "\"/>~<input type=\"date\" id=\"finish";
-						rowItem += ex_entryNum;
-						rowItem += "\"/></td>";
-						rowItem += "</tr>";
-						$('#exp_entry').append(rowItem);
-					}
-					function button5_click(){
-						if( $('#exp_entry tbody tr').length >1){
-							$('#exp_entry tr:last').remove();
-						}
-						else{
-							alert('No entry in a experience section!');
-						}
-					}
-				</script>
-
-				<table id="exp_entry">
-					<thead>
-						<td>조직,기관명</td>
-						<td>직책</td>
-						<td>기간</td>
-					</thead>
-					<tbody>
-						<tr>
-							<td><input type="text" id="org1" size="30"/></td>
-							<td><input type="text" id="duty1" size="30"/></td>
-							<td><input type="date" id="start1"/>~<input type="date" id="finish1"/></td>
-						</tr>
-					</tbody>
-				</table>
-			</fieldset>
-
-			<fieldset>
-				<legend>7. 능력</legend>
-				<input type="button" id="skill_add" onclick="button3_click();" value="Add entry"/>
-				<input type="button" id="skill_rem" onclick="button6_click();" value="Remove entry"/>
-				<script>
-					function button3_click() {
-						var sk_entryNum = $('#skill_entry tbody tr').length;
-						sk_entryNum++;
-						var rowItem = "<tr>";
-						rowItem += "<td><input type=\"text\" id=\"field";
-						rowItem += sk_entryNum;
-						rowItem += "\" size=\"30\"/></td>";
-						rowItem += "<td><select id=\"skill_level";
-						rowItem += sk_entryNum;
-						rowItem += "\" size=\"1\">";
-						rowItem += "<option value=\"expert\" selected>Expert</option>";
-						rowItem += "<option value=\"intermediate\">Intermediate</option>";
-						rowItem += "<option value=\"novice\">Novice</option></select></td>";
-						rowItem += "<td><input type=\"text\" id=\"detail";
-						rowItem += sk_entryNum;
-						rowItem += "\" size=\"60\"/></td>";
-						rowItem += "</tr>";
-						$('#skill_entry').append(rowItem);
-					}
-
-					function button6_click(){
-						if( $('#skill_entry tbody tr').length >1){
-							$('#skill_entry tr:last').remove();
-						}
-						else{
-							alert('No entry in a skill section!');
-						}
-					}
-				</script>
-
-				<table id="skill_entry">
-					<thead>
-						<td>분야</td>
-						<td>level</td>
-						<td>상세설명</td>
-					</thead>
-					<tbody>
-						<tr>
-							<td><input type="text" id="field1" size="30"/></td>
-							<td><select id="skill_level1" size="1">
-								<option value="expert" selected>Expert</option>
-								<option value="intermediate">Intermediate</option>
-								<option value="novice">Novice</option></select></td>
-							<td><input type="text" id="detail1" size="60"/></td>
-						</tr>
-					</tbody>
-				</table>
-			</fieldset>
-
-			<fieldset>
-				<legend>8. 기타설정</legend>
-				<table>
-					<tr><td>배경 색깔</td><td><input type="color" id="bgcolor" value="#ffffff" /></td></tr>
-					<tr><td>글자 색깔</td><td><input type="color" id="fcolor"/></td></tr>
-					<tr><td>글자 크기</td><td>0em<input type="range" id="pont" min="0" max="3" value="1" step="0.1"/>3em
-					</td></tr>
-				</table>
-			</fieldset>
-
-
-			<table><tr><td><input type="button" id="test" value="Make resume!" onclick="showResume();"/> <input  type="reset" value="reset"/></td></tr></table>
-
-
-
-			<!--/form!-->
-		</section>
-</div>
-
-	<section id="result" style="width: 70%; border: 3px solid black; margin: 40px auto; visibility: hidden; height: 0px; width: 600px;">
-		<div style="text-align: center;">
-			<h3>RESUME</h3>
-			<hr>
-		</div>
-		<div id ="forFontSize">
-		<div style="display:inline-block">
-			<div style="height: auto; width: 150px; float: left; margin: 5px 10px">
-				<img id="resume_photo" src="" alt="사진"/>
-			</div>
-			<div style="float: left;">
-				<strong><u><p id="resume_name" style="margin: 1px">이름</p></u></strong>
-				<span><STRONG>&nbsp; Contact & Address: </STRONG></span><br>
-				<span>&nbsp; Call No : </span><span id="resume_phone">폰번</span><br>
-				<span>&nbsp; E-mail : </span><span id="resume_email">이메일</span><br>
-				<span>&nbsp; Address : </span><span id="resume_address">주소</span><br>
-			</div>
-		</div>
-			<hr>
-			<span>&nbsp; Objective</span><br>
-			<p id="resume_obj">내용</p>
-			<hr>
-			<span>&nbsp; Education </span>
-			<p id="resume_edu">교육내용</p>
-			<hr>
-			<span>&nbsp; Experience </span>
-			<p id="resume_exp">경험내용</p>
-			<hr>
-			<span>&nbsp; Skill </span>
-			<p id="resume_ski">기술내용</p>
-			<hr>
-		</div>
-		<div style="text-align: center; font-size: 0.5em;">
-			<u><p id="resume_name" style="margin: 1px">Made by 김석환</p></u>
-		</div>
-	</section>
-
-    </body>
-</html>
-
-
-    </div>
-  </div>
-</div>
-
-
-    <!-- Footer -->
-
-<hr>
-
-<footer>
+<body>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <ul class="list-inline text-center">
+
+        <html>
+
+        <head>
+          <meta charset="UTF-8">
+          <meta name="keywords" content="김석환,고려대학교,컴퓨터학과" />
+          <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+          <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&amp;subset=korean" rel="stylesheet">
+          <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+          <script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+        </head>
+
+        <body>
+
+          <script language="javascript">
+            function toggleVisibility(id) {
+              var dom = document.getElementById(id);
+              if (dom.style.visibility != "hidden") {
+                dom.style.visibility = "hidden";
+                dom.style.height = "0px";
+              } else if (dom.style.visibility == "hidden") {
+                dom.style.visibility = "visible";
+                dom.style.height = "auto";
+              }
+            }
 
 
 
-          <li class="list-inline-item">
-            <a href="https://github.com/powerberry1">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
+            function showResume() {
+              var re_firstName = document.getElementById("first_name").value;
+              var re_middleName = document.getElementById("Middle_name").value;
+              var re_lastName = document.getElementById("Last_name").value;
+              var re_phone = document.getElementById("phone").value;
+              var re_email = document.getElementById("mail").value;
+              var re_address = document.getElementById("address").value;
+              var re_home = document.getElementById("home").value;
 
-        </ul>
-        <p class="copyright text-muted">Copyright &copy; KimSeokHwan 2018</p>
+              var re_goal = document.getElementById("goal").value;
+
+              var edu_length = $('#edu_entry tbody tr').length;
+              var exp_length = $('#exp_entry tbody tr').length;
+              var ski_length = $('#skill_entry tbody tr').length;
+
+              var re_bg = document.getElementById("bgcolor").value;
+              var re_fc = document.getElementById("fcolor").value;
+              var re_fs = document.getElementById("pont").value;
+              re_fs += "em";
+
+              var message = "Check it out!\n" + "Name: " + re_firstName + " " + re_middleName + " " + re_lastName + "\nPhone#: " + re_phone + "\nE-mail: " + re_email + "\nAddress: " + re_address + "\nHomepage: " + re_home + "\nCareer goal: " +
+                re_goal;
+
+              alert(message);
+
+              var re_education = "";
+              for (i = 1; i < edu_length + 1; i++) {
+                var id_school = "school" + i;
+                re_education += document.getElementById(id_school).value;
+                var id_major = "major" + i;
+                re_education += document.getElementById(id_major).value;
+                var id_addm = "addm" + i;
+                re_education += "  (" + document.getElementById(id_addm).value;
+                var id_grad = "grad" + i;
+                re_education += "~" + document.getElementById(id_grad).value;
+                var id_gpa = "gpa" + i;
+                re_education += ")  GPA: " + document.getElementById(id_gpa).value;
+                re_education += "<br>";
+              }
+
+
+              var re_experience = "";
+              for (i = 1; i < exp_length + 1; i++) {
+                var id_organization = "org" + i;
+                re_experience += document.getElementById(id_organization).value + " ";
+                var id_duty = "duty" + i;
+                re_experience += document.getElementById(id_duty).value;
+                var id_start = "start" + i;
+                re_experience += "  (" + document.getElementById(id_start).value;
+                var id_finish = "finish" + i;
+                re_experience += "~" + document.getElementById(id_finish).value + ")";
+                re_experience += "<br>";
+              }
+
+
+              var re_skill = "";
+              for (i = 1; i < ski_length + 1; i++) {
+                var id_field = "field" + i;
+                re_skill += document.getElementById(id_field).value;
+                var id_sl = "skill_level" + i;
+                re_skill += " - " + document.getElementById(id_sl).value;
+                var id_detail = "detail" + i;
+                re_skill += "  (" + document.getElementById(id_detail).value + ")";
+                re_skill += "<br>";
+              }
+
+
+              document.getElementById("resume_name").innerHTML = re_lastName + " " + re_middleName + " " + re_firstName;
+              document.getElementById("resume_phone").innerHTML = re_phone;
+              document.getElementById("resume_email").innerHTML = re_email;
+              document.getElementById("resume_address").innerHTML = re_address;
+
+
+              document.getElementById("resume_obj").innerHTML = re_goal;
+
+              document.getElementById("resume_edu").innerHTML = re_education;
+              document.getElementById("resume_exp").innerHTML = re_experience;
+              document.getElementById("resume_ski").innerHTML = re_skill;
+
+              document.getElementById("result").style.backgroundColor = re_bg;
+              document.getElementById("result").style.color = re_fc;
+              document.getElementById("forFontSize").style.fontSize = re_fs;
+              toggleVisibility("section");
+              toggleVisibility("result");
+            }
+          </script>
+
+          <div id="header-wrapper">
+
+
+            <section style="margin:40px">
+              <h2>이력서 작성</h2>
+
+              <div id="section">
+                <!--form method="post" action=""!-->
+                <fieldset id="name_section">
+                  <legend>1. 이름</legend>
+                  <table>
+                    <tr>
+                      <td>성 </td>
+                      <td><input type="text" id="first_name" size="40" value="" /></td>
+                    </tr>
+                    <tr>
+                      <td>이름 </td>
+                      <td> <input type="text" id="Last_name" size="40" value="" /></td>
+                    </tr>
+                  </table>
+                </fieldset>
+
+                <script type="text/javascript">
+                  function LoadImg(value) {
+                    if (value.files && value.files[0]) {
+                      var reader = new FileReader();
+                      reader.onload = function(e) {
+                        $('#resume_photo').attr('src', e.target.result);
+                      }
+                      reader.readAsDataURL(value.files[0]);
+                    }
+                  }
+                </script>
+
+                <fieldset>
+                  <legend>2. 사진</legend>
+                  <input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg(this);">
+                  < </fieldset>
+
+                    <fieldset>
+                      <legend>3. 연락처 </legend>
+                      <table>
+                        <tr>
+                          <td>핸드폰</td>
+                          <td><input type="tel" id="phone" size="30" placeholder="000-0000-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}"></td>
+                        </tr>
+                        <tr>
+                          <td>E-mail</td>
+                          <td><input type="email" id="mail" size="30" placeholder="aaa@naver.com" /></td>
+                        </tr>
+                        <tr>
+                          <td>E-mail</td>
+                          <td><input type="text" id="address" size="30" value="" /></td>
+                        </tr>
+                        <tr>
+                          <td>홈페이지</td>
+                          <td><input type="url" id="home" size="30" value="http://" /></td>
+                        </tr>
+                      </table>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend>4. 목표</legend>
+                      <textarea id="goal" cols="50" rows="5" placeholder="Write down your career goal."></textarea><br/>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend>5. 학적</legend>
+
+                      <input type="button" id="edu_add" onclick="button1_click();" value="목록 추가" />
+                      <input type="button" id="edu_rem" onclick="button4_click();" value="목록 제거" />
+                      <script>
+                        function button1_click() {
+                          var entryNum = $('#edu_entry tbody tr').length;
+                          entryNum++;
+                          var rowItem = "<tr>";
+                          rowItem += "<td><input type=\"text\" id=\"school";
+                          rowItem += entryNum;
+                          rowItem += "\" size=\"30\"/></td>";
+                          rowItem += "<td><input type=\"text\" id=\"major";
+                          rowItem += entryNum;
+                          rowItem += "\" size=\"30\"/></td>";
+                          rowItem += "<td><input type=\"date\" id=\"addm";
+                          rowItem += entryNum;
+                          rowItem += "\"/></td>";
+                          rowItem += "<td><input type=\"date\" id=\"grad";
+                          rowItem += entryNum;
+                          rowItem += "\"/></td>";
+                          rowItem += "<td><input type=\"text\" id=\"gpa";
+                          rowItem += entryNum;
+                          rowItem += "\" size=\"30\"/></td>";
+                          rowItem += "</tr>";
+                          $('#edu_entry').append(rowItem);
+                        }
+
+                        function button4_click() {
+                          if ($('#edu_entry tbody tr').length > 1) {
+                            $('#edu_entry tr:last').remove();
+                          } else {
+                            alert($('#edu_entry tbody tr').length + 'No entry in a education section!');
+                          }
+                        }
+                      </script>
+
+                      <table id="edu_entry">
+                        <thead>
+                          <td>학교명</td>
+                          <td>전공</td>
+                          <td>입학날짜</td>
+                          <td>졸업날짜</td>
+                          <td>평점</td>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><input type="text" id="school1" size="30" value="" /></td>
+                            <td><input type="text" id="major1" size="30" value="" /></td>
+                            <td><input type="date" id="addm1" value="" /></td>
+                            <td><input type="date" id="grad1" value="" /></td>
+                            <td><input type="text" id="gpa1" size="30" value="" /></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend>6. 경력</legend>
+                      <input type="button" id="exp_add" onclick="button2_click();" value="목록 추가" />
+                      <input type="button" id="exp_rem" onclick="button5_click();" value="목록 제거" />
+                      <script>
+                        function button2_click() {
+                          var ex_entryNum = $('#exp_entry tbody tr').length;
+                          ex_entryNum++;
+                          var rowItem = "<tr>";
+                          rowItem += "<td><input type=\"text\" id=\"org";
+                          rowItem += ex_entryNum;
+                          rowItem += "\" size=\"30\"/></td>";
+                          rowItem += "<td><input type=\"text\" id=\"duty";
+                          rowItem += ex_entryNum;
+                          rowItem += "\" size=\"30\"/></td>";
+                          rowItem += "<td><input type=\"date\" id=\"start";
+                          rowItem += ex_entryNum;
+                          rowItem += "\"/>~<input type=\"date\" id=\"finish";
+                          rowItem += ex_entryNum;
+                          rowItem += "\"/></td>";
+                          rowItem += "</tr>";
+                          $('#exp_entry').append(rowItem);
+                        }
+
+                        function button5_click() {
+                          if ($('#exp_entry tbody tr').length > 1) {
+                            $('#exp_entry tr:last').remove();
+                          } else {
+                            alert('No entry in a experience section!');
+                          }
+                        }
+                      </script>
+
+                      <table id="exp_entry">
+                        <thead>
+                          <td>조직,기관명</td>
+                          <td>직책</td>
+                          <td>기간</td>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><input type="text" id="org1" size="30" /></td>
+                            <td><input type="text" id="duty1" size="30" /></td>
+                            <td><input type="date" id="start1" />~<input type="date" id="finish1" /></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend>7. 능력</legend>
+                      <input type="button" id="skill_add" onclick="button3_click();" value="Add entry" />
+                      <input type="button" id="skill_rem" onclick="button6_click();" value="Remove entry" />
+                      <script>
+                        function button3_click() {
+                          var sk_entryNum = $('#skill_entry tbody tr').length;
+                          sk_entryNum++;
+                          var rowItem = "<tr>";
+                          rowItem += "<td><input type=\"text\" id=\"field";
+                          rowItem += sk_entryNum;
+                          rowItem += "\" size=\"30\"/></td>";
+                          rowItem += "<td><select id=\"skill_level";
+                          rowItem += sk_entryNum;
+                          rowItem += "\" size=\"1\">";
+                          rowItem += "<option value=\"expert\" selected>Expert</option>";
+                          rowItem += "<option value=\"intermediate\">Intermediate</option>";
+                          rowItem += "<option value=\"novice\">Novice</option></select></td>";
+                          rowItem += "<td><input type=\"text\" id=\"detail";
+                          rowItem += sk_entryNum;
+                          rowItem += "\" size=\"60\"/></td>";
+                          rowItem += "</tr>";
+                          $('#skill_entry').append(rowItem);
+                        }
+
+                        function button6_click() {
+                          if ($('#skill_entry tbody tr').length > 1) {
+                            $('#skill_entry tr:last').remove();
+                          } else {
+                            alert('No entry in a skill section!');
+                          }
+                        }
+                      </script>
+
+                      <table id="skill_entry">
+                        <thead>
+                          <td>분야</td>
+                          <td>level</td>
+                          <td>상세설명</td>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><input type="text" id="field1" size="30" /></td>
+                            <td><select id="skill_level1" size="1">
+								<option value="expert" selected>Expert</option>
+								<option value="intermediate">Intermediate</option>
+								<option value="novice">Novice</option></select></td>
+                            <td><input type="text" id="detail1" size="60" /></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend>8. 기타설정</legend>
+                      <table>
+                        <tr>
+                          <td>배경 색깔</td>
+                          <td><input type="color" id="bgcolor" value="#ffffff" /></td>
+                        </tr>
+                        <tr>
+                          <td>글자 색깔</td>
+                          <td><input type="color" id="fcolor" /></td>
+                        </tr>
+                        <tr>
+                          <td>글자 크기</td>
+                          <td>0em<input type="range" id="pont" min="0" max="3" value="1" step="0.1" />3em
+                          </td>
+                        </tr>
+                      </table>
+                    </fieldset>
+
+
+                    <table>
+                      <tr>
+                        <td><input type="button" id="test" value="Make resume!" onclick="showResume();" /> <input type="reset" value="reset" /></td>
+                      </tr>
+                    </table>
+
+
+            </section>
+            </div>
+
+            <section id="result" style="width: 70%; border: 3px solid black; margin: 40px auto; visibility: hidden; height: 0px; width: 600px;">
+              <div style="text-align: center;">
+                <h3>RESUME</h3>
+                <hr>
+              </div>
+              <div id="forFontSize">
+                <div style="display:inline-block">
+                  <div style="height: auto; width: 150px; float: left; margin: 5px 10px">
+                    <img id="resume_photo" src="" alt="사진" />
+                  </div>
+                  <div style="float: left;">
+                    <strong><u><p id="resume_name" style="margin: 1px">이름</p></u></strong>
+                    <span><STRONG>&nbsp; Contact & Address: </STRONG></span><br>
+                    <span>&nbsp; Call No : </span><span id="resume_phone">폰번</span><br>
+                    <span>&nbsp; E-mail : </span><span id="resume_email">이메일</span><br>
+                    <span>&nbsp; Address : </span><span id="resume_address">주소</span><br>
+                  </div>
+                </div>
+                <hr>
+                <span>&nbsp; Objective</span><br>
+                <p id="resume_obj">내용</p>
+                <hr>
+                <span>&nbsp; Education </span>
+                <p id="resume_edu">교육내용</p>
+                <hr>
+                <span>&nbsp; Experience </span>
+                <p id="resume_exp">경험내용</p>
+                <hr>
+                <span>&nbsp; Skill </span>
+                <p id="resume_ski">기술내용</p>
+                <hr>
+              </div>
+              <div style="text-align: center; font-size: 0.5em;">
+                <u><p id="resume_name" style="margin: 1px">Made by 김석환</p></u>
+              </div>
+            </section>
+
+        </body>
+
+        </html>
+
+
+        </div>
       </div>
     </div>
-  </div>
-</footer>
 
 
     <script src="/assets/vendor/jquery/jquery.min.js"></script>
-<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
 
-<script src="/assets/scripts.js"></script>
-
-
+    <script src="/assets/scripts.js"></script>
 
 
-  </body>
+
+
+</body>
 
 </html>
