@@ -78,7 +78,7 @@ image: /assets/images/contact3.jpg
               var re_fs = document.getElementById("pont").value;
               re_fs += "em";
 
-              var message = "Check it out!\n" + "Name: " + re_firstName + " " + re_lastName + "\nPhone#: " + re_phone + "\nE-mail: " + re_email + "\nAddress: " + re_address + "\nHomepage: " + re_home + "\nCareer goal: " +
+              var message = "Check!\n" + "이름: " + re_firstName + " " + re_lastName + "\n핸드폰번호: " + re_phone + "\nE-mail: " + re_email + "\n주소: " + re_address + "\nHomepage: " + re_home + "\n목: " +
                 re_goal;
 
               alert(message);
@@ -117,8 +117,6 @@ image: /assets/images/contact3.jpg
               for (i = 1; i < ski_length + 1; i++) {
                 var id_field = "field" + i;
                 re_skill += document.getElementById(id_field).value;
-                var id_sl = "skill_level" + i;
-                re_skill += " - " + document.getElementById(id_sl).value;
                 var id_detail = "detail" + i;
                 re_skill += "  (" + document.getElementById(id_detail).value + ")";
                 re_skill += "<br>";
@@ -317,21 +315,16 @@ image: /assets/images/contact3.jpg
                     </fieldset>
 
                     <fieldset>
-                      <legend>7. 능력</legend>
+                      <legend>7. 자격증</legend>
                       <table id="skill_entry">
                         <thead>
                           <td>분야</td>
-                          <td>level</td>
                           <td>상세설명</td>
                         </thead>
                         <tbody>
                           <tr>
-                            <td><input type="text" id="field1" size="15" /></td>
-                            <td><select id="skill_level1" size="1">
-								<option value="expert" selected>Expert</option>
-								<option value="intermediate">Intermediate</option>
-								<option value="novice">Novice</option></select></td>
-                            <td><input type="text" id="detail1" size="50" /></td>
+                            <td><input type="text" id="field1" size="135" /></td>
+                            <td><input type="text" id="detail1" size="60" /></td>
                           </tr>
                         </tbody>
                       </table>
@@ -345,12 +338,6 @@ image: /assets/images/contact3.jpg
                           rowItem += "<td><input type=\"text\" id=\"field";
                           rowItem += sk_entryNum;
                           rowItem += "\" size=\"30\"/></td>";
-                          rowItem += "<td><select id=\"skill_level";
-                          rowItem += sk_entryNum;
-                          rowItem += "\" size=\"1\">";
-                          rowItem += "<option value=\"expert\" selected>Expert</option>";
-                          rowItem += "<option value=\"intermediate\">Intermediate</option>";
-                          rowItem += "<option value=\"novice\">Novice</option></select></td>";
                           rowItem += "<td><input type=\"text\" id=\"detail";
                           rowItem += sk_entryNum;
                           rowItem += "\" size=\"60\"/></td>";
