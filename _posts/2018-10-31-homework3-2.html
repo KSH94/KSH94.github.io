@@ -61,7 +61,6 @@ image: /assets/images/contact3.jpg
 
             function showResume() {
               var re_firstName = document.getElementById("first_name").value;
-              var re_middleName = document.getElementById("Middle_name").value;
               var re_lastName = document.getElementById("Last_name").value;
               var re_phone = document.getElementById("phone").value;
               var re_email = document.getElementById("mail").value;
@@ -79,7 +78,7 @@ image: /assets/images/contact3.jpg
               var re_fs = document.getElementById("pont").value;
               re_fs += "em";
 
-              var message = "Check it out!\n" + "Name: " + re_firstName + " " + re_middleName + " " + re_lastName + "\nPhone#: " + re_phone + "\nE-mail: " + re_email + "\nAddress: " + re_address + "\nHomepage: " + re_home + "\nCareer goal: " +
+              var message = "Check it out!\n" + "Name: " + re_firstName + " " + re_lastName + "\nPhone#: " + re_phone + "\nE-mail: " + re_email + "\nAddress: " + re_address + "\nHomepage: " + re_home + "\nCareer goal: " +
                 re_goal;
 
               alert(message);
@@ -126,7 +125,7 @@ image: /assets/images/contact3.jpg
               }
 
 
-              document.getElementById("resume_name").innerHTML = re_lastName + " " + re_middleName + " " + re_firstName;
+              document.getElementById("resume_name").innerHTML = re_lastName + " " + re_firstName;
               document.getElementById("resume_phone").innerHTML = re_phone;
               document.getElementById("resume_email").innerHTML = re_email;
               document.getElementById("resume_address").innerHTML = re_address;
@@ -149,7 +148,7 @@ image: /assets/images/contact3.jpg
           <div id="header-wrapper">
 
 
-            <section style="margin:40px">
+            <section style="margin:10px">
               <h2>이력서 작성</h2>
 
               <div id="section">
@@ -394,7 +393,7 @@ image: /assets/images/contact3.jpg
 
                     <table>
                       <tr>
-                        <td><input type="button" id="test" value="완료" onclick="showResume();" /> <input type="reset" value="초기화" /></td>
+                        <td><input type="button" id="test" value="완료" onclick="showResume();" /></td>
                       </tr>
                     </table>
 
