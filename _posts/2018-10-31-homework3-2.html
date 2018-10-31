@@ -12,7 +12,7 @@ image: /assets/images/contact4.jpg
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-  <meta name="description" content="이력서 정보입력 1. Name Your First name Your Middle name Your Last name 2. Your photo 3. Contact information Phone num...">
+  <meta name="description" content="이력서 정보입력 1. 이름 성 이름 2. 사진 3. 핸드폰 번호">
 
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -98,7 +98,7 @@ image: /assets/images/contact4.jpg
 						re_education +=  "~"+document.getElementById(id_grad).value;
 						var id_gpa = "gpa" + i;
 						re_education +=  ")  GPA: "+document.getElementById(id_gpa).value;
-						re_education += "<br>"; //아마 여기 바꿔야할걸 <br> 이걸로
+						re_education += "<br>";
 					}
 
 
@@ -112,7 +112,7 @@ image: /assets/images/contact4.jpg
 						re_experience +=  "  ("+document.getElementById(id_start).value;
 						var id_finish = "finish" + i;
 						re_experience +=  "~"+document.getElementById(id_finish).value+")";
-						re_experience += "<br>"; //아마 여기 바꿔야할걸 <br> 이걸로
+						re_experience += "<br>";
 					}
 
 
@@ -124,10 +124,10 @@ image: /assets/images/contact4.jpg
 						re_skill += " - "+document.getElementById(id_sl).value;
 						var id_detail = "detail" + i;
 						re_skill +=  "  ("+document.getElementById(id_detail).value+")";
-						re_skill += "<br>"; //아마 여기 바꿔야할걸 <br> 이걸로
+						re_skill += "<br>";
 					}
 
-					// 정보 업데이트-------------------------------------------------
+
 					document.getElementById("resume_name").innerHTML = re_lastName+" "+re_middleName+" "+re_firstName;
 					document.getElementById("resume_phone").innerHTML = re_phone;
 					document.getElementById("resume_email").innerHTML = re_email;
@@ -152,16 +152,15 @@ image: /assets/images/contact4.jpg
 
 
 		<section style="margin:40px">
-			<h2>Resume Authoring</h2>
-			<p style="color: red;"><strong>오른쪽 상단의 주소부분에 안전하지 않은 스크립트 로드를 허용하세요.</strong></p>
+			<h2>이력서 정보입력</h2>
+
 <div id="section">
 			<!--form method="post" action=""!-->
 			<fieldset id="name_section">
-			<legend>1. Name</legend>
+			<legend>1. 이름</legend>
 			<table>
-			<tr><td>Your First name </td><td><input type="text" id="first_name" size="40" value=""/></td></tr>
-			<tr><td>Your Middle name </td><td><input type="text" id="Middle_name" size="40" value=""/placeholder="If you do not have it, just keep that blank."></td></tr>
-			<tr><td>Your Last name </td><td> <input type="text" id="Last_name" size="40" value=""/></td></tr>
+			<tr><td>성 </td><td><input type="text" id="first_name" size="40" value=""/></td></tr>
+			<tr><td>이름 </td><td> <input type="text" id="Last_name" size="40" value=""/></td></tr>
 			</table>
 			</fieldset>
 
@@ -178,28 +177,28 @@ image: /assets/images/contact4.jpg
 </script>
 
 			<fieldset>
-				<legend>2. Your photo</legend>
+				<legend>2. 사진</legend>
 				<input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg(this);"><!-- 연습용 -->
 
 			</fieldset>
 
 			<fieldset>
-				<legend>3. Contact information </legend>
+				<legend>3. 연락처 </legend>
 				<table>
-				<tr><td>Phone number</td><td><input type="tel" id="phone" size="30" placeholder="00*-000*-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" ></td></tr>
+				<tr><td>핸드폰 번호</td><td><input type="tel" id="phone" size="30" placeholder="00*-000*-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" ></td></tr>
 				<tr><td>E-mail</td><td><input type="email" id="mail" size="30" placeholder="abc@gmail.com"/></td></tr>
-				<tr><td>Address</td><td><input type="text" id="address" size="30" value=""/></td></tr>
+				<tr><td>주소</td><td><input type="text" id="address" size="30" value=""/></td></tr>
 				<tr><td>Homepage</td><td><input type="url" id="home" size="30" value="http://"/></td></tr>
 				</table>
 			</fieldset>
 
 			<fieldset>
-				<legend>4. Career goal/Objective</legend>
+				<legend>4. 목표</legend>
 				<textarea  id="goal"  cols="50" rows="5" placeholder="Write down your career goal." ></textarea><br/>
 			</fieldset>
 
 			<fieldset>
-				<legend>5. Education</legend>
+				<legend>5. 학적사항</legend>
 
 				<input type="button" id="edu_add" onclick="button1_click();" value="Add entry"/>
 				<input type="button" id="edu_rem" onclick="button4_click();" value="Remove entry"/>
@@ -239,11 +238,11 @@ image: /assets/images/contact4.jpg
 
 				<table id="edu_entry">
 					<thead>
-						<td>School</td>
-						<td>Major</td>
-						<td>Addmission date</td>
-						<td>Graduation date</td>
-						<td>GPA</td>
+						<td>학교명</td>
+						<td>전공</td>
+						<td>입학날짜</td>
+						<td>졸업날짜</td>
+						<td>주소</td>
 					</thead>
 					<tbody>
 						<tr>
