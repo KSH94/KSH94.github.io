@@ -1,18 +1,12 @@
----
-layout: post
-title:  "Homework 3 - Resume Authoring"
-date:   2018-10-31 21:15:05 +0000
-image: /assets/images/startup3.jpg
 
----
-<!--
+<!DOCTYPE html>
+
+<html>
+
   <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-  <meta name="description" content="이력서 정보입력 1. 이름 성 이름 2. 사진 3. 핸드폰 번호">
 
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -28,14 +22,16 @@ image: /assets/images/startup3.jpg
 </head>
 
 
+  <body>
 <div class="container">
   <div class="row">
-    <div class="col-lg-12 col-md-12 mx-auto">
--->
+    <div class="col-lg-8 col-md-10 mx-auto">
+
       <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="keywords" content="김석환,고려대학교,컴퓨터학과" />
 		<link href="default.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&amp;subset=korean" rel="stylesheet">
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -151,7 +147,7 @@ image: /assets/images/startup3.jpg
 
 
 		<section style="margin:40px">
-			<h2>이력서 정보입력</h2>
+			<h2>이력서 작성</h2>
 
 <div id="section">
 			<!--form method="post" action=""!-->
@@ -177,30 +173,30 @@ image: /assets/images/startup3.jpg
 
 			<fieldset>
 				<legend>2. 사진</legend>
-				<input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg(this);"><!-- 연습용 -->
+				<input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg(this);"><
 
 			</fieldset>
 
 			<fieldset>
 				<legend>3. 연락처 </legend>
 				<table>
-				<tr><td>핸드폰 번호</td><td><input type="tel" id="phone" size="30" placeholder="00*-000*-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" ></td></tr>
-				<tr><td>E-mail</td><td><input type="email" id="mail" size="30" placeholder="abc@gmail.com"/></td></tr>
-				<tr><td>주소</td><td><input type="text" id="address" size="30" value=""/></td></tr>
-				<tr><td>Homepage</td><td><input type="url" id="home" size="30" value="http://"/></td></tr>
+				<tr><td>핸드폰</td><td><input type="tel" id="phone" size="30" placeholder="000-0000-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" ></td></tr>
+				<tr><td>E-mail</td><td><input type="email" id="mail" size="30" placeholder="aaa@naver.com"/></td></tr>
+				<tr><td>E-mail</td><td><input type="text" id="address" size="30" value=""/></td></tr>
+				<tr><td>홈페이지</td><td><input type="url" id="home" size="30" value="http://"/></td></tr>
 				</table>
 			</fieldset>
 
 			<fieldset>
 				<legend>4. 목표</legend>
-				<textarea  id="goal"  cols="50" rows="5"></textarea><br/>
+				<textarea  id="goal"  cols="50" rows="5" placeholder="Write down your career goal." ></textarea><br/>
 			</fieldset>
 
 			<fieldset>
-				<legend>5. 학적사항</legend>
+				<legend>5. 학적</legend>
 
-				<input type="button" id="edu_add" onclick="button1_click();" value="Add entry"/>
-				<input type="button" id="edu_rem" onclick="button4_click();" value="Remove entry"/>
+				<input type="button" id="edu_add" onclick="button1_click();" value="목록 추가"/>
+				<input type="button" id="edu_rem" onclick="button4_click();" value="목록 제거"/>
 				<script>
 					function button1_click() {
 						var entryNum = $('#edu_entry tbody tr').length;
@@ -241,7 +237,7 @@ image: /assets/images/startup3.jpg
 						<td>전공</td>
 						<td>입학날짜</td>
 						<td>졸업날짜</td>
-						<td>주소</td>
+						<td>평점</td>
 					</thead>
 					<tbody>
 						<tr>
@@ -257,8 +253,8 @@ image: /assets/images/startup3.jpg
 
 			<fieldset>
 				<legend>6. 경력</legend>
-				<input type="button" id="exp_add" onclick="button2_click();" value="Add entry"/>
-				<input type="button" id="exp_rem" onclick="button5_click();" value="Remove entry"/>
+				<input type="button" id="exp_add" onclick="button2_click();" value="목록 추가"/>
+				<input type="button" id="exp_rem" onclick="button5_click();" value="목록 제거"/>
 				<script>
 					function button2_click() {
 						var ex_entryNum = $('#exp_entry tbody tr').length;
@@ -342,7 +338,7 @@ image: /assets/images/startup3.jpg
 				<table id="skill_entry">
 					<thead>
 						<td>분야</td>
-						<td>Level</td>
+						<td>level</td>
 						<td>상세설명</td>
 					</thead>
 					<tbody>
@@ -361,15 +357,15 @@ image: /assets/images/startup3.jpg
 			<fieldset>
 				<legend>8. 기타설정</legend>
 				<table>
-					<tr><td>배경 색</td><td><input type="color" id="bgcolor" value="#ffffff" /></td></tr>
-					<tr><td>글자 색</td><td><input type="color" id="fcolor"/></td></tr>
+					<tr><td>배경 색깔</td><td><input type="color" id="bgcolor" value="#ffffff" /></td></tr>
+					<tr><td>글자 색깔</td><td><input type="color" id="fcolor"/></td></tr>
 					<tr><td>글자 크기</td><td>0em<input type="range" id="pont" min="0" max="3" value="1" step="0.1"/>3em
 					</td></tr>
 				</table>
 			</fieldset>
 
 
-			<table><tr><td><input type="button" id="test" value="완료" onclick="showResume();"/> <input  type="reset" value="초기화"/></td></tr></table>
+			<table><tr><td><input type="button" id="test" value="Make resume!" onclick="showResume();"/> <input  type="reset" value="reset"/></td></tr></table>
 
 
 
@@ -413,5 +409,54 @@ image: /assets/images/startup3.jpg
 			<u><p id="resume_name" style="margin: 1px">Made by 김석환</p></u>
 		</div>
 	</section>
-</body>
+
+    </body>
+</html>
+
+
+    </div>
+  </div>
+</div>
+
+
+    <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+
+
+
+          <li class="list-inline-item">
+            <a href="https://github.com/powerberry1">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; KimSeokHwan 2018</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  </body>
+
 </html>
