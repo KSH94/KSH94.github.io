@@ -22,7 +22,7 @@ image: /assets/images/contact3.jpg
 
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="https://ksh94.github.io/2018/10/31/homework3-2/">
-  <link rel="alternate" type="application/rss+xml" title="Powerberry" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" href="/feed.xml">
 
 </head>
 
@@ -213,6 +213,24 @@ image: /assets/images/contact3.jpg
 
                     <fieldset>
                       <legend>5. 학적</legend>
+                      <table id="edu_entry">
+                        <thead>
+                          <td>학교명</td>
+                          <td>전공</td>
+                          <td>입학날짜</td>
+                          <td>졸업날짜</td>
+                          <td>평점</td>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><input type="text" id="school1" size="30" value="" /></td>
+                            <td><input type="text" id="major1" size="30" value="" /></td>
+                            <td><input type="date" id="addm1" value="" /></td>
+                            <td><input type="date" id="grad1" value="" /></td>
+                            <td><input type="text" id="gpa1" size="30" value="" /></td>
+                          </tr>
+                        </tbody>
+                      </table>
 
                       <input type="button" id="edu_add" onclick="button1_click();" value="목록 추가" />
                       <input type="button" id="edu_rem" onclick="button4_click();" value="목록 제거" />
@@ -248,25 +266,6 @@ image: /assets/images/contact3.jpg
                           }
                         }
                       </script>
-
-                      <table id="edu_entry">
-                        <thead>
-                          <td>학교명</td>
-                          <td>전공</td>
-                          <td>입학날짜</td>
-                          <td>졸업날짜</td>
-                          <td>평점</td>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td><input type="text" id="school1" size="30" value="" /></td>
-                            <td><input type="text" id="major1" size="30" value="" /></td>
-                            <td><input type="date" id="addm1" value="" /></td>
-                            <td><input type="date" id="grad1" value="" /></td>
-                            <td><input type="text" id="gpa1" size="30" value="" /></td>
-                          </tr>
-                        </tbody>
-                      </table>
                     </fieldset>
 
                     <fieldset>
