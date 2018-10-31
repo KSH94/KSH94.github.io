@@ -78,7 +78,7 @@ image: /assets/images/contact3.jpg
               var re_fs = document.getElementById("pont").value;
               re_fs += "em";
 
-              var message = "Check!\n" + "이름: " + re_firstName + " " + re_lastName + "\n핸드폰번호: " + re_phone + "\nE-mail: " + re_email + "\n주소: " + re_address + "\nHomepage: " + re_home + "\n목: " +
+              var message = "Check!\n" + "이름: " + re_firstName + " " + re_lastName + "\n핸드폰번호: " + re_phone + "\nE-mail: " + re_email + "\n주소: " + re_address + "\nHomepage: " + re_home + "\n목표: " +
                 re_goal;
 
               alert(message);
@@ -194,7 +194,7 @@ image: /assets/images/contact3.jpg
                           <td><input type="email" id="mail" size="30" placeholder="abc@naver.com" /></td>
                         </tr>
                         <tr>
-                          <td>E-mail</td>
+                          <td>주소</td>
                           <td><input type="text" id="address" size="30" value="" /></td>
                         </tr>
                         <tr>
@@ -323,7 +323,7 @@ image: /assets/images/contact3.jpg
                         </thead>
                         <tbody>
                           <tr>
-                            <td><input type="text" id="field1" size="135" /></td>
+                            <td><input type="text" id="field1" size="30" /></td>
                             <td><input type="text" id="detail1" size="60" /></td>
                           </tr>
                         </tbody>
@@ -385,7 +385,7 @@ image: /assets/images/contact3.jpg
             </section>
             </div>
 
-            <section id="result" style="width: 70%; border: 3px solid black; margin: 40px auto; visibility: hidden; height: 0px; width: 600px;">
+            <section id="result" style="width: 100%; border: 3px solid black; margin: 40px auto; visibility: hidden; height: 0px; width: 600px;">
               <div style="text-align: center;">
                 <h3>RESUME</h3>
                 <hr>
@@ -398,23 +398,23 @@ image: /assets/images/contact3.jpg
                   <div style="float: left;">
                     <strong><u><p id="resume_name" style="margin: 1px">이름</p></u></strong>
                     <span><STRONG>&nbsp; Contact & Address: </STRONG></span><br>
-                    <span>&nbsp; Call No : </span><span id="resume_phone">폰번</span><br>
+                    <span>&nbsp; Call No : </span><span id="resume_phone">핸드폰</span><br>
                     <span>&nbsp; E-mail : </span><span id="resume_email">이메일</span><br>
                     <span>&nbsp; Address : </span><span id="resume_address">주소</span><br>
                   </div>
                 </div>
                 <hr>
                 <span>&nbsp; Objective</span><br>
-                <p id="resume_obj">내용</p>
+                <p id="resume_obj">목표</p>
                 <hr>
                 <span>&nbsp; Education </span>
-                <p id="resume_edu">교육내용</p>
+                <p id="resume_edu">학적</p>
                 <hr>
                 <span>&nbsp; Experience </span>
-                <p id="resume_exp">경험내용</p>
+                <p id="resume_exp">경력</p>
                 <hr>
                 <span>&nbsp; Skill </span>
-                <p id="resume_ski">기술내용</p>
+                <p id="resume_ski">자격증</p>
                 <hr>
               </div>
             </section>
