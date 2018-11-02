@@ -105,10 +105,8 @@ image: /assets/images/contact3.jpg
                 resume_experience += document.getElementById(id_organization).value + " ";
                 var id_duty = "duty" + i;
                 resume_experience += document.getElementById(id_duty).value;
-                var id_start = "start" + i;
-                resume_experience += "  (" + document.getElementById(id_start).value;
-                var id_finish = "finish" + i;
-                resume_experience += "~" + document.getElementById(id_finish).value + ")";
+                var id_story = "story" + i;
+                resume_experience += "  (" + document.getElementById(id_story).value;
                 resume_experience += "<br>";
               }
 
@@ -271,13 +269,13 @@ image: /assets/images/contact3.jpg
                         <thead>
                           <td>조직,기관명</td>
                           <td>직책</td>
-                          <td>기간</td>
+                          <td>활동</td>
                         </thead>
                         <tbody>
                           <tr>
                             <td><input type="text" id="org1" size="30" /></td>
                             <td><input type="text" id="duty1" size="30" /></td>
-                            <td><input type="date" id="start1" />~<input type="date" id="finish1" /></td>
+                            <td><input type="text" id="story1" size="30" /></td>
                           </tr>
                         </tbody>
                       </table>
@@ -294,11 +292,9 @@ image: /assets/images/contact3.jpg
                           rowItem += "<td><input type=\"text\" id=\"duty";
                           rowItem += ex_entryNum;
                           rowItem += "\" size=\"30\"/></td>";
-                          rowItem += "<td><input type=\"date\" id=\"start";
+                          rowItem += "<td><input type=\"text\" id=\"story";
                           rowItem += ex_entryNum;
-                          rowItem += "\"/>~<input type=\"date\" id=\"finish";
-                          rowItem += ex_entryNum;
-                          rowItem += "\"/></td>";
+                          rowItem += "\" size=\"30\"/></td>";
                           rowItem += "</tr>";
                           $('#exp_entry').append(rowItem);
                         }
