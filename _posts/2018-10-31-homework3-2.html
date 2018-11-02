@@ -36,7 +36,7 @@ image: /assets/images/contact3.jpg
 
         <head>
           <meta charset="UTF-8">
-          <meta name="keywords" content="김석환,고려대학교,컴퓨터학과" />
+          <meta name="keywords" content="2013190731 컴퓨터학과 김석환" />
           <link href="default.css" rel="stylesheet" type="text/css" media="all" />
           <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&amp;subset=korean" rel="stylesheet">
           <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -59,85 +59,85 @@ image: /assets/images/contact3.jpg
 
 
 
-            function showResume() {
-              var re_firstName = document.getElementById("first_name").value;
-              var re_lastName = document.getElementById("Last_name").value;
-              var re_phone = document.getElementById("phone").value;
-              var re_email = document.getElementById("mail").value;
-              var re_address = document.getElementById("address").value;
-              var re_home = document.getElementById("home").value;
+            function MakeResume() {
+              var resume_firstName = document.getElementById("first_name").value;
+              var resume_lastName = document.getElementById("Last_name").value;
+              var resume_phone = document.getElementById("phone").value;
+              var resume_email = document.getElementById("mail").value;
+              var resume_address = document.getElementById("address").value;
+              var resume_home = document.getElementById("home").value;
 
-              var re_goal = document.getElementById("goal").value;
+              var resume_goal = document.getElementById("goal").value;
 
               var edu_length = $('#edu_entry tbody tr').length;
               var exp_length = $('#exp_entry tbody tr').length;
               var ski_length = $('#skill_entry tbody tr').length;
 
-              var re_bg = document.getElementById("bgcolor").value;
-              var re_fc = document.getElementById("fcolor").value;
-              var re_fs = document.getElementById("pont").value;
-              re_fs += "em";
+              var resume_bg = document.getElementById("bgcolor").value;
+              var resume_fc = document.getElementById("fcolor").value;
+              var resume_fs = document.getElementById("pont").value;
+              resume_fs += "em";
 
-              var message = "Check!\n" + "이름: " + re_firstName + " " + re_lastName + "\n핸드폰번호: " + re_phone + "\nE-mail: " + re_email + "\n주소: " + re_address + "\nHomepage: " + re_home + "\n목표: " +
-                re_goal;
+              var message = 이름: " + resume_firstName + " " + resume_lastName + "\n핸드폰번호: " + resume_phone + "\nE-mail: " + resume_email + "\n주소: " + resume_address + "\nHomepage: " + resume_home + "\n목표: " +
+                resume_goal;
 
               alert(message);
 
-              var re_education = "";
+              var resume_education = "";
               for (i = 1; i < edu_length + 1; i++) {
                 var id_school = "school" + i;
-                re_education += document.getElementById(id_school).value;
+                resume_education += document.getElementById(id_school).value;
                 var id_major = "major" + i;
-                re_education += document.getElementById(id_major).value;
+                resume_education += document.getElementById(id_major).value;
                 var id_addm = "addm" + i;
-                re_education += "  (" + document.getElementById(id_addm).value;
+                resume_education += "  (" + document.getElementById(id_addm).value;
                 var id_grad = "grad" + i;
-                re_education += "~" + document.getElementById(id_grad).value;
+                resume_education += "~" + document.getElementById(id_grad).value;
                 var id_gpa = "gpa" + i;
-                re_education += ")  GPA: " + document.getElementById(id_gpa).value;
-                re_education += "<br>";
+                resume_education += ")  GPA: " + document.getElementById(id_gpa).value;
+                resume_education += "<br>";
               }
 
 
-              var re_experience = "";
+              var resume_experience = "";
               for (i = 1; i < exp_length + 1; i++) {
                 var id_organization = "org" + i;
-                re_experience += document.getElementById(id_organization).value + " ";
+                resume_experience += document.getElementById(id_organization).value + " ";
                 var id_duty = "duty" + i;
-                re_experience += document.getElementById(id_duty).value;
+                resume_experience += document.getElementById(id_duty).value;
                 var id_start = "start" + i;
-                re_experience += "  (" + document.getElementById(id_start).value;
+                resume_experience += "  (" + document.getElementById(id_start).value;
                 var id_finish = "finish" + i;
-                re_experience += "~" + document.getElementById(id_finish).value + ")";
-                re_experience += "<br>";
+                resume_experience += "~" + document.getElementById(id_finish).value + ")";
+                resume_experience += "<br>";
               }
 
 
-              var re_skill = "";
+              var resume_skill = "";
               for (i = 1; i < ski_length + 1; i++) {
                 var id_field = "field" + i;
-                re_skill += document.getElementById(id_field).value;
+                resume_skill += document.getElementById(id_field).value;
                 var id_detail = "detail" + i;
-                re_skill += "  (" + document.getElementById(id_detail).value + ")";
-                re_skill += "<br>";
+                resume_skill += "  (" + document.getElementById(id_detail).value + ")";
+                resume_skill += "<br>";
               }
 
 
-              document.getElementById("resume_name").innerHTML = re_firstName + " " + re_lastName;
-              document.getElementById("resume_phone").innerHTML = re_phone;
-              document.getElementById("resume_email").innerHTML = re_email;
-              document.getElementById("resume_address").innerHTML = re_address;
+              document.getElementById("resume_name").innerHTML = resume_firstName + " " + resume_lastName;
+              document.getElementById("resume_phone").innerHTML = resume_phone;
+              document.getElementById("resume_email").innerHTML = resume_email;
+              document.getElementById("resume_address").innerHTML = resume_address;
 
 
-              document.getElementById("resume_obj").innerHTML = re_goal;
+              document.getElementById("resume_obj").innerHTML = resume_goal;
 
-              document.getElementById("resume_edu").innerHTML = re_education;
-              document.getElementById("resume_exp").innerHTML = re_experience;
-              document.getElementById("resume_ski").innerHTML = re_skill;
+              document.getElementById("resume_edu").innerHTML = resume_education;
+              document.getElementById("resume_exp").innerHTML = resume_experience;
+              document.getElementById("resume_ski").innerHTML = resume_skill;
 
-              document.getElementById("result").style.backgroundColor = re_bg;
-              document.getElementById("result").style.color = re_fc;
-              document.getElementById("forFontSize").style.fontSize = re_fs;
+              document.getElementById("result").style.backgroundColor = resume_bg;
+              document.getElementById("result").style.color = resume_fc;
+              document.getElementById("forFontSize").style.fontSize = resume_fs;
               toggleVisibility("section");
               toggleVisibility("result");
             }
@@ -186,11 +186,11 @@ image: /assets/images/contact3.jpg
                       <table>
                         <tr>
                           <td>핸드폰</td>
-                          <td><input type="tel" id="phone" size="30" placeholder="010-0000-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}"></td>
+                          <td><input type="tel" id="phone" size="30" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}"></td>
                         </tr>
                         <tr>
                           <td>E-mail</td>
-                          <td><input type="email" id="mail" size="30" placeholder="abc@naver.com" /></td>
+                          <td><input type="email" id="mail" size="30"/></td>
                         </tr>
                         <tr>
                           <td>주소</td>
@@ -376,7 +376,7 @@ image: /assets/images/contact3.jpg
 
                     <table>
                       <tr>
-                        <td><input type="button" id="test" value="완료" onclick="showResume();" /></td>
+                        <td><input type="button" id="test" value="완료" onclick="MakeResume();" /></td>
                       </tr>
                     </table>
 
