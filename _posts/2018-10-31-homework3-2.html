@@ -59,7 +59,7 @@ image: /assets/images/contact3.jpg
 
 
 
-            function MakeResume() {
+            function showResume() {
               var resume_firstName = document.getElementById("first_name").value;
               var resume_lastName = document.getElementById("Last_name").value;
               var resume_phone = document.getElementById("phone").value;
@@ -344,7 +344,7 @@ image: /assets/images/contact3.jpg
                           if ($('#skill_entry tbody tr').length > 1) {
                             $('#skill_entry tr:last').remove();
                           } else {
-                            alert('No entry in a skill section!');
+                            alert('At least one!');
                           }
                         }
                       </script>
@@ -372,7 +372,7 @@ image: /assets/images/contact3.jpg
 
                     <table>
                       <tr>
-                        <td><input type="button" id="test" value="완료" onclick="MakeResume();" /></td>
+                        <td><input type="button" id="test" value="완료" onclick="showResume();" /></td>
                       </tr>
                     </table>
 
