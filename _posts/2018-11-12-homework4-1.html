@@ -82,6 +82,19 @@ image: /assets/images/contact.jpg
       drawline(x, y+height/5, x+width, y+height/5, "black");
     }
 
+    function deletewindow(dB, rect){
+      context.fillStyle = "black";
+      context.fillRect(dB.x, dB.y, dB.width, dB.height);
+      AddDel(dB, rect);
+      drawline(dB.x+3, dB.y+3, dB.x+dB.width-3, dB.y+dB.height-3, "white");
+      drawline(dB.x+dB.width-3, dB.y+3, dB.x+3, dB.y+dB.height-3, "white");
+    }
+    function hideewindow(hB, rect){
+      context.fillStyle = "slategray";
+      context.fillRect(hB.x, hB.y, hB.width, hB.height);
+      AddHid(hB, rect);
+      drawline(hB.x, hB.y+hB.height/2, x+hB.width, hB.y+hB.height/2, "white");
+    }
   </script>
 </head>
 
