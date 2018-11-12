@@ -54,6 +54,34 @@ image: /assets/images/contact.jpg
       textColor: "black"
       createtextbox(My_text_box);
     }
+
+    //gui
+    function createWindow(My_window){
+      var x = My_window.x;
+      var y = My_window.y;
+      var width = My_window.width;
+      var height = My_window.height;
+      var color = My_window.color;
+      var title = My_window.title;
+      var textColor = My_window.textColor;
+
+      context.fillStyle = color;
+      context.fillRect(x,y,width,height);
+      context.strokeRect(x,y,width,height);
+      dB = {x:x+width-25, y:y, width:25, height:25};
+      deletewindow(dB, My_window);
+      hB = {x:x+width-50, y:y, width:25, height:25};
+      hidewindow(hB, My_window);
+
+      context.fillStyle = textColor;
+      var font_size = width/10;
+      context.font = font_size.toString() + "px Arial";
+      context.textAlign = "center";
+      context.fillText(title, x+width/2, y+height/6);
+
+      drawline(x, y+height/5, x+width, y+height/5, "black");
+    }
+
   </script>
 </head>
 
