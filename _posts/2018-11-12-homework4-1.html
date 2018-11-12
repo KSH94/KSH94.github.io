@@ -95,6 +95,25 @@ image: /assets/images/contact.jpg
       AddHid(hB, rect);
       drawline(hB.x, hB.y+hB.height/2, x+hB.width, hB.y+hB.height/2, "white");
     }
+    function AddDel(dB,rect){
+      canvas.addEventListener('click', function(ent){
+        var mouseP = getMousePos(canvas, evt);
+        if(Inside(mouseP,dB)){
+          context.clearRect(rect.x-1,rect.y-1,rect.width+2,rect.height+2);
+        }
+      }, false);
+    }
+    function Inside(pos,rect){
+      return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
+    }
+    function AddHid(hB,rect){
+      canvas.addEventListener('click', function(evt){
+        var mouseP = getMousePos(canvas, evt);
+        if(Inside(mouseP, hB)){
+          context.clearRect(rect.x-1,rect.y-1,rect.width+2,rect.height+2);
+        }
+      }, false);
+    }
   </script>
 </head>
 
