@@ -138,6 +138,22 @@ image: /assets/images/contact.jpg
       return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
     }
 
+    function AddDel(dB,rect){
+      canvas.addEventListener('click', function(ent){
+        var mouseP = getMousePos(canvas, evt);
+        if(Inside(mouseP,dB)){
+          cnt.clearRect(rect.x-1,rect.y-1,rect.width+2,rect.height+2);
+        }
+      }, false);
+    }
+    function AddHid(hB,rect){
+      canvas.addEventListener('click', function(evt){
+        var mouseP = getMousePos(canvas, evt);
+        if(Inside(mouseP, hB)){
+          cnt.clearRect(rect.x-1,rect.y-1,rect.width+2,rect.height+2);
+        }
+      }, false);
+    }
 
     function getoffset(el){
       const rect = el.getBoundingClientRect();
