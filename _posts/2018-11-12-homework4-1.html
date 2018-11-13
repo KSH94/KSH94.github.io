@@ -89,6 +89,8 @@ image: /assets/images/contact.jpg
       var textColor = My_button.textColor;
 
       cnt.fillStyle = color;
+      cnt.lineJoin = "round";
+      cnt.lineWidth = cornerRadius;
       cnt.fillRect(x+(cornerRadius/2),y+(cornerRadius/2),width-cornerRadius,height-cornerRadius);
 
       cnt.fillStyle = textColor;
