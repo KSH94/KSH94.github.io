@@ -89,7 +89,7 @@ image: /assets/images/contact.jpg
       var width = My_button.width;
       var height = My_button.height;
       var color = My_button.color;
-      var text = My_button.text;
+      var text = My_button.title;
       var textColor = My_button.textColor;
 
       cnt.fillStyle = color;
@@ -99,7 +99,7 @@ image: /assets/images/contact.jpg
       var font_size = width/10;
       cnt.font = font_size.toString() + "px Arial";
       cnt.textAlign = "center";
-      cnt.fillText(title,x+width/2,y+height/2);
+      cnt.fillText(text,x+width/2,y+height/2);
     }
 
     function createtextbox(My_text_box){
@@ -108,7 +108,7 @@ image: /assets/images/contact.jpg
       var width = My_text_box.width;
       var height = My_text_box.height;
       var color = My_text_box.color;
-      var text = My_text_box.text;
+      var text = My_text_box.title;
       var textColor = My_text_box.textColor;
 
       cnt.fillStyle = color;
@@ -118,7 +118,7 @@ image: /assets/images/contact.jpg
       var font_size = width/10;
       cnt.font = font_size.toString() + "px Arial";
       cnt.textAlign = "center";
-      cnt.fillText(title,x+width/2,y+height/2);
+      cnt.fillText(text,x+width/2,y+height/2);
     }
   </script>
   <script>
