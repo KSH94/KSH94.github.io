@@ -29,7 +29,7 @@ image: /assets/images/contact.jpg
       textColor: "black"
       createButton(My_button);
     }
-    var My_button2 = {
+    var My_button = {
       x:400, y:80, width: 150, height: 70, color: "dodgerBlue", title: "My_button2",
       textColor: "black"
       createButton(My_button);
@@ -39,17 +39,17 @@ image: /assets/images/contact.jpg
       textColor: "black"
       createtextbox(My_text_box);
     }
-    var My_menu = {
+    var My_text_box = {
       x:400, y:200, width: 250, height: 100, color: "dodgerBlue", title: "My_menu",
       textColor: "black"
       createtextbox(My_text_box);
     }
-    var Item1 = {
+    var Item = {
       x:400, y:300, width: 250, height: 100, color: "dodgerBlue", title: "Item1",
       textColor: "black"
       createtextbox(My_text_box);
     }
-    var Item2 = {
+    var Item = {
       x:400, y:400, width: 250, height: 100, color: "dodgerBlue", title: "Item2",
       textColor: "black"
       createtextbox(My_text_box);
@@ -82,6 +82,43 @@ image: /assets/images/contact.jpg
       drawline(x, y+height/5, x+width, y+height/5, "black");
     }
 
+    function createButton(My_button){
+      var x = My_button.x;
+      var y = My_button.y;
+      var width = My_button.width;
+      var height = My_button.height;
+      var color = My_button.color;
+      var text = My_button.text;
+      var textColor = My_button.textColor;
+
+      context.fillStyle = color;
+      context.fillRect(x,y,width,height);
+
+      context.fillStyle = textColor;
+      var font_size = width/10;
+      context.font = font_size.toString() + "px Arial";
+      context.textAlign = "center";
+      context.fillText(text,x+width/2,y+height/2);
+    }
+
+    function createtextbox(My_text_box){
+      var x = My_text_box.x;
+      var y = My_text_box.y;
+      var width = My_text_boxn.width;
+      var height = M_text_box.height;
+      var color = My_text_box.color;
+      var text = My_text_box.text;
+      var textColor = My_text_box.textColor;
+
+      context.fillStyle = color;
+      context.fillRect(x,y,width,height);
+
+      context.fillStyle = textColor;
+      var font_size = width/10;
+      context.font = font_size.toString() + "px Arial";
+      context.textAlign = "center";
+      context.fillText(text,x+width/2,y+height/2);
+    }
     function deletewindow(dB, rect){
       context.fillStyle = "black";
       context.fillRect(dB.x, dB.y, dB.width, dB.height);
