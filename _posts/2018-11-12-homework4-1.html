@@ -124,14 +124,14 @@ image: /assets/images/contact.jpg
     function deletewindow(dB, rect){
       cnt.fillStyle = "black";
       cnt.fillRect(dB.x, dB.y, dB.width, dB.height);
-      //AddDel(dB, rect);
+      AddDel(dB, rect);
       drawline(dB.x+3, dB.y+3, dB.x+dB.width-3, dB.y+dB.height-3, "white");
       drawline(dB.x+dB.width-3, dB.y+3, dB.x+3, dB.y+dB.height-3, "white");
     }
     function hidewindow(hB, rect){
       cnt.fillStyle = "slategray";
       cnt.fillRect(hB.x, hB.y, hB.width, hB.height);
-      //AddHid(hB, rect);
+      AddHid(hB, rect);
       drawline(hB.x+hB.width/5, hB.y+hB.height*2/3, hB.x+hB.width*4/5, hB.y+hB.height*2/3, "white");
     }
     function Inside(pos,rect){
