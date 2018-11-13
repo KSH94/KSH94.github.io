@@ -13,7 +13,6 @@ image: /assets/images/contact.jpg
   <script>
     var canvas;
     var cnt;
-    
     function Draw(){
         canvas = document.getElementById("canvas");
         if(canvas.getContext)
@@ -111,7 +110,7 @@ image: /assets/images/contact.jpg
       drawline(dB.x+3, dB.y+3, dB.x+dB.width-3, dB.y+dB.height-3, "white");
       drawline(dB.x+dB.width-3, dB.y+3, dB.x+3, dB.y+dB.height-3, "white");
     }
-    function hideewindow(hB, rect){
+    function hidewindow(hB, rect){
       cnt.fillStyle = "slategray";
       cnt.fillRect(hB.x, hB.y, hB.width, hB.height);
       AddHid(hB, rect);
