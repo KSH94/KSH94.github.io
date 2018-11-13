@@ -79,6 +79,7 @@ image: /assets/images/contact.jpg
     }
 
     function createButton(My_button){
+      var cornerRadius = 20;
       var x = My_button.x;
       var y = My_button.y;
       var width = My_button.width;
@@ -88,7 +89,7 @@ image: /assets/images/contact.jpg
       var textColor = My_button.textColor;
 
       cnt.fillStyle = color;
-      cnt.fillRect(x,y,width,height);
+      cnt.fillRect(x+(cornerRadius/2),y+(cornerRadius/2),width-cornerRadius,height-cornerRadius);
 
       cnt.fillStyle = textColor;
       var font_size = width/10;
