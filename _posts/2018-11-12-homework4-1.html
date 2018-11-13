@@ -11,10 +11,13 @@ image: /assets/images/contact.jpg
   <meta charset="utf-8"/>
 
   <script>
+    var canvas;
+    var cnt;
+    
     function Draw(){
-        var canvas = document.getElementById("canvas");
+        canvas = document.getElementById("canvas");
         if(canvas.getContext)
-          var cnt = canvas.getContext("2d");
+          cnt = canvas.getContext("2d");
 
       var My_window = {
         x:0, y:0, width: 250, height: 300, color: "dodgerBlue", title: "My_window",
