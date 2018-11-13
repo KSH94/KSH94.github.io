@@ -8,7 +8,8 @@ image: /assets/images/contact.jpg
 <html>
 <head>
   <meta charset="utf-8"/>
-  <script type="text/javascript">
+
+  <script>
     fuction draw(){
         var canvas = document.getElementById("canvas");
         if(canvas.getContext)
@@ -20,35 +21,24 @@ image: /assets/images/contact.jpg
 
       var My_window = {
         x:0, y:0, width: 250, height: 300, color: "dodgerBlue", title: "My_window",
-        textColor: "black"};
-        createWindow(My_window);
+        textColor: "black"
+      };
+      createWindow(My_window);
       var My_button = {
         x:400, y:0, width: 150, height: 70, color: "dodgerBlue", title: "My_button",
-        textColor: "black"};
-        createButton(My_button);
+        textColor: "black"
+      };
+      createButton(My_button);
       var My_button = {
         x:400, y:80, width: 150, height: 70, color: "dodgerBlue", title: "My_button2",
-        textColor: "black"};
-        createButton(My_button);
-      var My_text_box = {
-        x:0, y:400, width: 250, height: 100, color: "dodgerBlue", title: "My_text_box",
-        textColor: "black"};
-        createtextbox(My_text_box);
-      var My_text_box = {
-        x:400, y:200, width: 250, height: 100, color: "dodgerBlue", title: "My_menu",
-        textColor: "black"};
-        createtextbox(My_text_box);
-      var Item = {
-        x:400, y:300, width: 250, height: 100, color: "dodgerBlue", title: "Item1",
-        textColor: "black"};
-        createtextbox(My_text_box);
-      var Item = {
-        x:400, y:400, width: 250, height: 100, color: "dodgerBlue", title: "Item2",
-        textColor: "black"};
-        createtextbox(My_text_box);
-    }
+        textColor: "black"
+      };
+      createButton(My_button);
 
-    //gui
+    }
+  </script>
+
+  <script>
     function createWindow(My_window){
       var x = My_window.x;
       var y = My_window.y;
@@ -112,6 +102,8 @@ image: /assets/images/contact.jpg
       cnt.textAlign = "center";
       cnt.fillText(text,x+width/2,y+height/2);
     }
+  </script>
+  <script>
     function deletewindow(dB, rect){
       cnt.fillStyle = "black";
       cnt.fillRect(dB.x, dB.y, dB.width, dB.height);
@@ -144,7 +136,8 @@ image: /assets/images/contact.jpg
         }
       }, false);
     }
-
+  </script>
+  <script>
     function getoffset(el){
       const rect = el.getBoundingClientRect();
       return{
