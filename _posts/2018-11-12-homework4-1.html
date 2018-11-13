@@ -54,9 +54,8 @@ image: /assets/images/contact.jpg
       };
       createtextbox(My_text_box);
     }
-  </script>
 
-  <script>
+
     function createWindow(My_window){
       var x = My_window.x;
       var y = My_window.y;
@@ -120,8 +119,8 @@ image: /assets/images/contact.jpg
       cnt.textAlign = "center";
       cnt.fillText(text,x+width/2,y+height/2);
     }
-  </script>
-  <script>
+
+
     function deletewindow(dB, rect){
       cnt.fillStyle = "black";
       cnt.fillRect(dB.x, dB.y, dB.width, dB.height);
@@ -133,13 +132,13 @@ image: /assets/images/contact.jpg
       cnt.fillStyle = "slategray";
       cnt.fillRect(hB.x, hB.y, hB.width, hB.height);
       //AddHid(hB, rect);
-      drawline(hB.x+hB.width/5, hB.y+hB.height/3, hB.x+hB.width*4/5, hB.y+hB.height/3, "white");
+      drawline(hB.x+hB.width/5, hB.y+hB.height*2/3, hB.x+hB.width*4/5, hB.y+hB.height*2/3, "white");
     }
     function Inside(pos,rect){
       return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
     }
-  </script>
-  <script>
+
+
     function getoffset(el){
       const rect = el.getBoundingClientRect();
       return{
