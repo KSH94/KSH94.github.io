@@ -33,7 +33,26 @@ image: /assets/images/contact.jpg
         textColor: "black"
       };
       createButton(My_button);
-
+      var My_text_box = {
+        x:0, y:400, width: 250, height: 100, color: "dodgerBlue", title: "My_text_box",
+        textColor: "black"
+      };
+      createtextbox(My_text_box);
+      var My_text_box = {
+        x:400, y:200, width: 250, height: 100, color: "dodgerBlue", title: "My_menu",
+        textColor: "black"
+      };
+      createtextbox(My_text_box);
+      var Item = {
+        x:400, y:300, width: 250, height: 100, color: "dodgerBlue", title: "Item1",
+        textColor: "black"
+      };
+      createtextbox(My_text_box);
+      var Item = {
+        x:400, y:400, width: 250, height: 100, color: "dodgerBlue", title: "Item2",
+        textColor: "black"
+      };
+      createtextbox(My_text_box);
     }
   </script>
 
@@ -116,24 +135,8 @@ image: /assets/images/contact.jpg
       AddHid(hB, rect);
       drawline(hB.x, hB.y+hB.height/2, hB.x+hB.width, hB.y+hB.height/2, "white");
     }
-    function AddDel(dB,rect){
-      canvas.addEventListener('click', function(ent){
-        var mouseP = getMousePos(canvas, evt);
-        if(Inside(mouseP,dB)){
-          cnt.clearRect(rect.x-1,rect.y-1,rect.width+2,rect.height+2);
-        }
-      }, false);
-    }
     function Inside(pos,rect){
       return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
-    }
-    function AddHid(hB,rect){
-      canvas.addEventListener('click', function(evt){
-        var mouseP = getMousePos(canvas, evt);
-        if(Inside(mouseP, hB)){
-          cnt.clearRect(rect.x-1,rect.y-1,rect.width+2,rect.height+2);
-        }
-      }, false);
     }
   </script>
   <script>
