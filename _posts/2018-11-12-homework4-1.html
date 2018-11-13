@@ -114,7 +114,7 @@ image: /assets/images/contact.jpg
       cnt.fillStyle = "slategray";
       cnt.fillRect(hB.x, hB.y, hB.width, hB.height);
       AddHid(hB, rect);
-      drawline(hB.x, hB.y+hB.height/2, x+hB.width, hB.y+hB.height/2, "white");
+      drawline(hB.x, hB.y+hB.height/2, hB.x+hB.width, hB.y+hB.height/2, "white");
     }
     function AddDel(dB,rect){
       canvas.addEventListener('click', function(ent){
