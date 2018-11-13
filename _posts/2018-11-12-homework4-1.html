@@ -9,7 +9,7 @@ image: /assets/images/contact.jpg
 <head>
   <meta charset="utf-8"/>
   <script type="text/javascript">
-    window.onload = fuction(){
+    fuction draw(){
         var canvas = document.getElementById("canvas");
         if(canvas.getContext)
           var cnt = canvas.getContext("2d");
@@ -169,7 +169,7 @@ image: /assets/images/contact.jpg
     }
   </script>
 </head>
-<body>
+<body onload="draw();">
   <canvas id="canvas" width="1000" height="800">
   </canvas>
 </body>
