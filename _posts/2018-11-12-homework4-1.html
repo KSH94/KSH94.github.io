@@ -6,164 +6,164 @@ image: /assets/images/contact.jpg
 
 ---
 <html>
-  <meta charset="utf-8"/>
+  <head>
+    <meta charset="utf-8"/>
 
-  <script>
-    fuction Draw(){
-        var canvas = document.getElementById("canvas");
-        if(canvas.getContext)
-          var cnt = canvas.getContext("2d");
+    <script>
+      fuction Draw(){
+          var canvas = document.getElementById("canvas");
+          if(canvas.getContext)
+            var cnt = canvas.getContext("2d");
 
-      <style type="text/css">
-        casvas { border: 1px solid black; }
-      </style>
+        <style type="text/css">
+          casvas { border: 1px solid black; }
+        </style>
 
-      var My_window = {
-        x:0, y:0, width: 250, height: 300, color: "dodgerBlue", title: "My_window",
-        textColor: "black"
-      };
-      createWindow(My_window);
-      var My_button = {
-        x:400, y:0, width: 150, height: 70, color: "dodgerBlue", title: "My_button",
-        textColor: "black"
-      };
-      createButton(My_button);
-      var My_button = {
-        x:400, y:80, width: 150, height: 70, color: "dodgerBlue", title: "My_button2",
-        textColor: "black"
-      };
-      createButton(My_button);
+        var My_window = {
+          x:0, y:0, width: 250, height: 300, color: "dodgerBlue", title: "My_window",
+          textColor: "black"
+        };
+        createWindow(My_window);
+        var My_button = {
+          x:400, y:0, width: 150, height: 70, color: "dodgerBlue", title: "My_button",
+          textColor: "black"
+        };
+        createButton(My_button);
+        var My_button = {
+          x:400, y:80, width: 150, height: 70, color: "dodgerBlue", title: "My_button2",
+          textColor: "black"
+        };
+        createButton(My_button);
 
-    }
-  </script>
+      }
+    </script>
 
-  <script>
-    function createWindow(My_window){
-      var x = My_window.x;
-      var y = My_window.y;
-      var width = My_window.width;
-      var height = My_window.height;
-      var color = My_window.color;
-      var title = My_window.title;
-      var textColor = My_window.textColor;
+    <script>
+      function createWindow(My_window){
+        var x = My_window.x;
+        var y = My_window.y;
+        var width = My_window.width;
+        var height = My_window.height;
+        var color = My_window.color;
+        var title = My_window.title;
+        var textColor = My_window.textColor;
 
-      cnt.fillStyle = color;
-      cnt.fillRect(x,y,width,height);
-      cnt.strokeRect(x,y,width,height);
-      dB = {x:x+width-25, y:y, width:25, height:25};
-      deletewindow(dB, My_window);
-      hB = {x:x+width-50, y:y, width:25, height:25};
-      hidewindow(hB, My_window);
+        cnt.fillStyle = color;
+        cnt.fillRect(x,y,width,height);
+        cnt.strokeRect(x,y,width,height);
+        dB = {x:x+width-25, y:y, width:25, height:25};
+        deletewindow(dB, My_window);
+        hB = {x:x+width-50, y:y, width:25, height:25};
+        hidewindow(hB, My_window);
 
-      cnt.fillStyle = textColor;
-      var font_size = width/10;
-      cnt.font = font_size.toString() + "px Arial";
-      cnt.textAlign = "center";
-      cnt.fillText(title, x+width/2, y+height/6);
+        cnt.fillStyle = textColor;
+        var font_size = width/10;
+        cnt.font = font_size.toString() + "px Arial";
+        cnt.textAlign = "center";
+        cnt.fillText(title, x+width/2, y+height/6);
 
-      drawline(x, y+height/5, x+width, y+height/5, "black");
-    }
+        drawline(x, y+height/5, x+width, y+height/5, "black");
+      }
 
-    function createButton(My_button){
-      var x = My_button.x;
-      var y = My_button.y;
-      var width = My_button.width;
-      var height = My_button.height;
-      var color = My_button.color;
-      var text = My_button.text;
-      var textColor = My_button.textColor;
+      function createButton(My_button){
+        var x = My_button.x;
+        var y = My_button.y;
+        var width = My_button.width;
+        var height = My_button.height;
+        var color = My_button.color;
+        var text = My_button.text;
+        var textColor = My_button.textColor;
 
-      cnt.fillStyle = color;
-      cnt.fillRect(x,y,width,height);
+        cnt.fillStyle = color;
+        cnt.fillRect(x,y,width,height);
 
-      cnt.fillStyle = textColor;
-      var font_size = width/10;
-      cnt.font = font_size.toString() + "px Arial";
-      cnt.textAlign = "center";
-      cnt.fillText(text,x+width/2,y+height/2);
-    }
+        cnt.fillStyle = textColor;
+        var font_size = width/10;
+        cnt.font = font_size.toString() + "px Arial";
+        cnt.textAlign = "center";
+        cnt.fillText(text,x+width/2,y+height/2);
+      }
 
-    function createtextbox(My_text_box){
-      var x = My_text_box.x;
-      var y = My_text_box.y;
-      var width = My_text_boxn.width;
-      var height = M_text_box.height;
-      var color = My_text_box.color;
-      var text = My_text_box.text;
-      var textColor = My_text_box.textColor;
+      function createtextbox(My_text_box){
+        var x = My_text_box.x;
+        var y = My_text_box.y;
+        var width = My_text_boxn.width;
+        var height = M_text_box.height;
+        var color = My_text_box.color;
+        var text = My_text_box.text;
+        var textColor = My_text_box.textColor;
 
-      cnt.fillStyle = color;
-      cnt.fillRect(x,y,width,height);
+        cnt.fillStyle = color;
+        cnt.fillRect(x,y,width,height);
 
-      cnt.fillStyle = textColor;
-      var font_size = width/10;
-      cnt.font = font_size.toString() + "px Arial";
-      cnt.textAlign = "center";
-      cnt.fillText(text,x+width/2,y+height/2);
-    }
-  </script>
-  <script>
-    function deletewindow(dB, rect){
-      cnt.fillStyle = "black";
-      cnt.fillRect(dB.x, dB.y, dB.width, dB.height);
-      AddDel(dB, rect);
-      drawline(dB.x+3, dB.y+3, dB.x+dB.width-3, dB.y+dB.height-3, "white");
-      drawline(dB.x+dB.width-3, dB.y+3, dB.x+3, dB.y+dB.height-3, "white");
-    }
-    function hideewindow(hB, rect){
-      cnt.fillStyle = "slategray";
-      cnt.fillRect(hB.x, hB.y, hB.width, hB.height);
-      AddHid(hB, rect);
-      drawline(hB.x, hB.y+hB.height/2, x+hB.width, hB.y+hB.height/2, "white");
-    }
-    function AddDel(dB,rect){
-      canvas.addEventListener('click', function(ent){
-        var mouseP = getMousePos(canvas, evt);
-        if(Inside(mouseP,dB)){
-          cnt.clearRect(rect.x-1,rect.y-1,rect.width+2,rect.height+2);
-        }
-      }, false);
-    }
-    function Inside(pos,rect){
-      return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
-    }
-    function AddHid(hB,rect){
-      canvas.addEventListener('click', function(evt){
-        var mouseP = getMousePos(canvas, evt);
-        if(Inside(mouseP, hB)){
-          cnt.clearRect(rect.x-1,rect.y-1,rect.width+2,rect.height+2);
-        }
-      }, false);
-    }
-  </script>
-  <script>
-    function getoffset(el){
-      const rect = el.getBoundingClientRect();
-      return{
-        left: rect.left + window.scrollX,
-        top: rect.top + window.scrollY
-      };
-    }
-    function getMousePos(canvas, event){
-      var rect = canvas.getBoundingClientRect();
-      return{
-        x: event.clientX - rect.left,
-        y: event.clientY - rect.top
-      };
-    }
-    function drawline(x1,y1,x2,y2,color){
-      cnt.beginPath();
-      cnt.moveTo(x1,y1);
-      cnt.lineTo(x2,y2);
-      cnt.strokeStyle = color;
-      cnt.stroke();
-      cnt.closePath();
-    }
-  </script>
-<head>
-</head>
-<body onload="Draw()">
-  <canvas id="canvas" width="1000" height="800">
-  </canvas>
-</body>
+        cnt.fillStyle = textColor;
+        var font_size = width/10;
+        cnt.font = font_size.toString() + "px Arial";
+        cnt.textAlign = "center";
+        cnt.fillText(text,x+width/2,y+height/2);
+      }
+    </script>
+    <script>
+      function deletewindow(dB, rect){
+        cnt.fillStyle = "black";
+        cnt.fillRect(dB.x, dB.y, dB.width, dB.height);
+        AddDel(dB, rect);
+        drawline(dB.x+3, dB.y+3, dB.x+dB.width-3, dB.y+dB.height-3, "white");
+        drawline(dB.x+dB.width-3, dB.y+3, dB.x+3, dB.y+dB.height-3, "white");
+      }
+      function hideewindow(hB, rect){
+        cnt.fillStyle = "slategray";
+        cnt.fillRect(hB.x, hB.y, hB.width, hB.height);
+        AddHid(hB, rect);
+        drawline(hB.x, hB.y+hB.height/2, x+hB.width, hB.y+hB.height/2, "white");
+      }
+      function AddDel(dB,rect){
+        canvas.addEventListener('click', function(ent){
+          var mouseP = getMousePos(canvas, evt);
+          if(Inside(mouseP,dB)){
+            cnt.clearRect(rect.x-1,rect.y-1,rect.width+2,rect.height+2);
+          }
+        }, false);
+      }
+      function Inside(pos,rect){
+        return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
+      }
+      function AddHid(hB,rect){
+        canvas.addEventListener('click', function(evt){
+          var mouseP = getMousePos(canvas, evt);
+          if(Inside(mouseP, hB)){
+            cnt.clearRect(rect.x-1,rect.y-1,rect.width+2,rect.height+2);
+          }
+        }, false);
+      }
+    </script>
+    <script>
+      function getoffset(el){
+        const rect = el.getBoundingClientRect();
+        return{
+          left: rect.left + window.scrollX,
+          top: rect.top + window.scrollY
+        };
+      }
+      function getMousePos(canvas, event){
+        var rect = canvas.getBoundingClientRect();
+        return{
+          x: event.clientX - rect.left,
+          y: event.clientY - rect.top
+        };
+      }
+      function drawline(x1,y1,x2,y2,color){
+        cnt.beginPath();
+        cnt.moveTo(x1,y1);
+        cnt.lineTo(x2,y2);
+        cnt.strokeStyle = color;
+        cnt.stroke();
+        cnt.closePath();
+      }
+    </script>
+  </head>
+  <body onload="Draw()">
+    <canvas id="canvas" width="1000" height="800">
+    </canvas>
+  </body>
 </html>
