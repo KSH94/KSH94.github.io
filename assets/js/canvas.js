@@ -62,6 +62,7 @@
 
       context.fillStyle = color;
       context.fillRect(x,y,width,height);
+      context.strokeRect(x,y,width,height);
 
       if(exit == true){
         dButton = {x:x+width-25, y:y, width:25, height:25};
