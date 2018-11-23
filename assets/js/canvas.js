@@ -165,7 +165,8 @@
   function AddHideEvent(dButton,rect){
     canvas.addEventListener('click', function(evt) {
       var mousePos = getMousePos(canvas, evt);
-      if (isInside(mousePos,dButton)) {
+      if(isInside(mousePos, dButton)){
+        cnt.clearRect(rect.x-1,rect.y-1,rect.width+2,rect.height+2);
       }
     }, false);
   }
