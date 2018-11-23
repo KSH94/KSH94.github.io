@@ -23,7 +23,7 @@ image: /assets/images/contact.jpg
     this.children = [];
   }
   function create_rootnode(){
-    var data = {id:0, name:'root', graphic:{x:0, y:0, width:80, height:50, color: 'dodgerBlue'}};
+    var data = {id:0, name:'root', graphic:{x:0, y:0, width:120, height:50, color: 'dodgerBlue'}};
     var root = new Node(data);
     return root;
   }
@@ -101,7 +101,7 @@ image: /assets/images/contact.jpg
 
     var tree = create_rootnode();
     tree.data.graphic = {
-      x:canvas.width/2, y:0, width:80, height:50,
+      x:canvas.width/2, y:0, width:120, height:50,
       color: "dodgerBlue",
       text: "Main Window", textColor: "black", textSize:20, exit:false
     }
