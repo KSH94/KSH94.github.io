@@ -127,16 +127,11 @@ image: /assets/images/contact.jpg
   var node = Search_node(tree, 1);
   Add_node(data, node);
   var data = {id:7,name:'Brightness'};
-  var node = Search_node(tree, 3);
+  var node = Search_node(tree, 5);
   Add_node(data, node);
   var data = {id:8,name:'Size'};
-  var node = Search_node(tree, 3);
+  var node = Search_node(tree, 5);
   Add_node(data, node);
-  Render(tree);
-  Delete_node(tree, 3);
-  data = {id:2,name:'Search!', graphic:{color:'blue'}}
-  Change_node(tree,2,data);
-  tree.data.graphic.y = 300;
   Render(tree);
   }
 </script>
