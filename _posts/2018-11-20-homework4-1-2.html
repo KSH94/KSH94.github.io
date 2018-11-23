@@ -101,7 +101,7 @@ image: /assets/images/contact.jpg
 
     var tree = create_rootnode();
     tree.data.graphic = {
-      x:canvas.width/2, y:0, width:130, height:50,
+      x:canvas.width/2, y:100, width:130, height:50,
       color: "dodgerBlue",
       text: "Main Window", textColor: "black", textSize:20, exit:false
     }
@@ -131,12 +131,16 @@ image: /assets/images/contact.jpg
     var node = Search(tree, 5);
     add_node(data, node);
 
-    var data = {id:5, name:'size'};
+    var data = {id:8, name:'size'};
     var node = Search(tree, 5);
     add_node(data, node);
 
-    var data = {id:5, name:'edit_photo'};
-    var node = Search(tree, 1);
+    var data = {id:9, name:'delete'};
+    var node = Search(tree, 3);
+    add_node(data, node);
+
+    var data = {id:10, name:'edit_photo'};
+    var node = Search(tree, 3);
     add_node(data, node);
 
     Render(tree);
