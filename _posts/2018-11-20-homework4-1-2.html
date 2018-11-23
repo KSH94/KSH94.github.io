@@ -31,10 +31,10 @@ image: /assets/images/contact.jpg
     var node = new Node(data);
     root.children.push(node);
     node.parent = root;
-    root. childnum = root.childnum + 1;
+    root. childnum += 1;
     while(root.parent != null){
       root = root.parent;
-      root.childnum = root.childnum + 1;
+      root.childnum += 1;
     }
   }
   function Search(node, id){
@@ -78,7 +78,7 @@ image: /assets/images/contact.jpg
       graphic.y = root.data.graphic.y + 80;
       for(var i=0; i<root.children.lenght; i++){
         graphic.x = root.data.graphic.x - (parseInt((root.children[i].childnum - 1)/2) + 0.5)*120;
-        graphic.x = graphic.x + i*120;
+        graphic.x += i*120;
         graphic.text = root.children[i].data.name;
         if('graphic' in root.children[i].data){
           graphic.color = root.children[i].data.graphic.color;
