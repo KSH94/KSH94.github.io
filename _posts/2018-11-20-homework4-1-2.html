@@ -16,34 +16,30 @@ image: /assets/images/contact.jpg
     return this.push.apply(this, rest);
   };
 </script>
-
 <script>
-//Tree ADT
   function Node(data) {
     this.data = data;
-    this.numChild = 0;
+    this.Childnum = 0;
     this.parent = null;
     this.children = [];
   }
-  function create_root(){
+  function Create_root(){
     var data = {id:0,name:'root',
-                graphic:{x:0,y:0,width:100,height:50, color:'lightskyblue'}};
+                graphic:{x:0,y:0,width:100,height:50, color:'dodgerBlue'}};
 	  var root = new Node(data);
-
     return root;
   }
-  function add_node(data, root){
+  function Add_node(data, root){
 	  var node = new Node(data);
     root.children.push(node);
     node.parent = root;
-    root.numChild += 1;
+    root.Childnum += 1;
     while(root.parent != null){
       root = root.parent;
-      root.numChild += 1;
+      root.Childnum += 1;
     }
   }
-  //search node by id
-  function search_node(node,id){
+  function Search_node(node,id){
     if(node.data.id == id){
   	  return node;
     }
@@ -51,39 +47,39 @@ image: /assets/images/contact.jpg
   	  var i;
       var result = null;
       for(i = 0; result == null && i < node.children.length; i ++){
-    	  result = search_node(node.children[i], id);
+    	  result = Search_node(node.children[i], id);
       }
   	  return result;
     }
 	  return null;
   }
-  function change_node(root, id ,data){
-    var node = search_node(root, id);
+  function Change_node(root, id ,data){
+    var node = Search_node(root, id);
     if(node == null){
   	  alert('there is no node to delete');
     }
     node.data = data;
   }
-  function delete_node(root,id){
-	  var node = search_node(root, id);
+  function Delete_node(root,id){
+	  var node = Search_node(root, id);
     if(node == null){
   	  alert('there is no node to delete');
     }
-    var p_node = node.parent;
-    for(var i = 0; i<p_node.children.length; i ++){
-  	  if(p_node.children[i].data.id == id){
+    var parent_node = node.parent;
+    for(var i = 0; i<parent_node.children.length; i ++){
+  	  if(parent_node.children[i].data.id == id){
     	  break;
       }
     }
-    p_node.children.remove(i);
+    parent_node.children.remove(i);
   }
-  function render(root){
+  function Render(root){
     createTextBox(root.data.graphic);
     if(root.children.length > 0){
       var graphic = jQuery.extend({}, root.data.graphic)
       graphic.y = root.data.graphic.y + 80;
       for(var i =0; i<root.children.length; i ++){
-        graphic.x = root.data.graphic.x - (parseInt((root.children[i].numChild-1)/2) + 0.5) * 120;
+        graphic.x = root.data.graphic.x - (parseInt((root.children[i].Childnum-1)/2) + 0.5) * 120;
         graphic.x += (i) * 120;
         graphic.text = root.children[i].data.name;
         if('graphic' in root.children[i].data){
@@ -94,15 +90,13 @@ image: /assets/images/contact.jpg
                  root.data.graphic.y+root.data.graphic.height,
                  graphic.x + graphic.width/2,
                  graphic.y);
-        render(root.children[i]);
-        //createTextBox(root.children[i].data.graphic);
+        Render(root.children[i]);
       }
     }
   }
 </script>
 
 <script>
-  //Get Canvas
   var canvas;
   var context;
   window.onload = function() {
@@ -110,40 +104,40 @@ image: /assets/images/contact.jpg
     if (canvas == null || canvas.getContext == null) return;
       context = canvas.getContext("2d");
 
-  var tree = create_root();
+  var tree = Create_root();
   tree.data.graphic = {
     x:canvas.width/2, y:0, width:100, height:40,
-    color:"lightcoral",
-    text:"root", textColor:"white", textSize:16,
+    color:"dodgerBlue",
+    text:"Main window", textColor:"black", textSize:12,
     exit:false}
 
-  var data = {id:1,name:'W_edit'};
-  add_node(data, tree);
-  var data = {id:2,name:'W_order'};
-  add_node(data, tree);
-  var data = {id:3,name:'W_view'};
-  add_node(data, tree);
-  var data = {id:4,name:'B_cut_photo'};
-  var node = search_node(tree, 1);
-  add_node(data, node);
-  var data = {id:5,name:'B_blur'};
-  var node = search_node(tree, 1);
-  add_node(data, node);
-  var data = {id:6,name:'B_stretch'};
-  var node = search_node(tree, 1);
-  add_node(data, node);
-  var data = {id:7,name:'B_color'};
-  var node = search_node(tree, 3);
-  add_node(data, node);
-  var data = {id:7,name:'B_people'};
-  var node = search_node(tree, 3);
-  add_node(data, node);
-  render(tree);
-  delete_node(tree, 3);
-  data = {id:2,name:'Search!', graphic:{color:'lightskyblue'}}
-  change_node(tree,2,data);
+  var data = {id:1,name:'Upload'};
+  Add_node(data, tree);
+  var data = {id:2,name:'Search'};
+  Add_node(data, tree);
+  var data = {id:3,name:'Edit'};
+  Add_node(data, tree);
+  var data = {id:4,name:'Select_ph'};
+  var node = Search_node(tree, 1);
+  Add_node(data, node);
+  var data = {id:5,name:'Edit_ph'};
+  var node = Search_node(tree, 1);
+  Add_node(data, node);
+  var data = {id:6,name:'Upload_ph'};
+  var node = Search_node(tree, 1);
+  Add_node(data, node);
+  var data = {id:7,name:'Brightness'};
+  var node = Search_node(tree, 3);
+  Add_node(data, node);
+  var data = {id:8,name:'Size'};
+  var node = Search_node(tree, 3);
+  Add_node(data, node);
+  Render(tree);
+  Delete_node(tree, 3);
+  data = {id:2,name:'Search!', graphic:{color:'blue'}}
+  Change_node(tree,2,data);
   tree.data.graphic.y = 300;
-  render(tree);
+  Render(tree);
   }
 </script>
 
