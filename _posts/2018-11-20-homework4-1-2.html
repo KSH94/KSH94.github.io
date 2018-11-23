@@ -105,42 +105,26 @@ image: /assets/images/contact.jpg
       color: "dodgerBlue",
       text: "Main Window", textColor: "black", textSize:20, exit:false
     }
-
-    var data = {id:1, name:'upload'};
+    var data = {id:1,name:'W_edit'};
     add_node(data, tree);
-
-    var data = {id:2, name:'search'};
+    var data = {id:2,name:'W_order'};
     add_node(data, tree);
-
-    var data = {id:3, name:'edit'};
+    var data = {id:3,name:'W_view'};
     add_node(data, tree);
-
-    var data = {id:4, name:'select_photo'};
-    var node = Search(tree, 1);
+    var data = {id:4,name:'B_cut_photo'};
+    var node = search_node(tree, 1);
     add_node(data, node);
-
-    var data = {id:5, name:'edit_photo'};
-    var node = Search(tree, 1);
+    var data = {id:5,name:'B_blur'};
+    var node = search_node(tree, 1);
     add_node(data, node);
-
-    var data = {id:6, name:'cut'};
-    var node = Search(tree, 5);
+    var data = {id:6,name:'B_stretch'};
+    var node = search_node(tree, 1);
     add_node(data, node);
-
-    var data = {id:7, name:'brightness'};
-    var node = Search(tree, 5);
+    var data = {id:7,name:'B_color'};
+    var node = search_node(tree, 3);
     add_node(data, node);
-
-    var data = {id:8, name:'size'};
-    var node = Search(tree, 5);
-    add_node(data, node);
-
-    var data = {id:9, name:'delete'};
-    var node = Search(tree, 3);
-    add_node(data, node);
-
-    var data = {id:10, name:'edit_photo'};
-    var node = Search(tree, 3);
+    var data = {id:7,name:'B_people'};
+    var node = search_node(tree, 3);
     add_node(data, node);
 
     Render(tree);
