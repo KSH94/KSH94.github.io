@@ -1,0 +1,152 @@
+---
+layout: post
+title:  "Homework 4-1-2"
+date:   2018-11-20 21:15:05 +0000
+image: /assets/images/contact.jpg
+
+---
+<!DOCTYPE html>
+
+<script type = "text/javascript" src = "/assets/js/canvas.js"></script>
+<script>
+  Array.prototype.remove = function(from, to){
+    var rest = this.slice((to || from) + 1 || this.length);
+    this.length = from < 0 ? this.length + from : from;
+    return this.push.apply(this, rest);
+  };
+
+  //tree
+  function Node(data){
+    this.data = data;
+    this.childnum = 0;
+    this.parent = null;
+    this.children = [];
+  }
+  function create_rootnode(){
+    var data = {id:0, name:'root', graphic:{x:0, y:0, width:80, height:50, color: 'dodgerBlue'}};
+    var root = new Node(data);
+    return root;
+  }
+  function add_node(data, root){
+    var node = new Node(data);
+    root.children.push(node);
+    node.parent = root;
+    root. childnum = root.childnum + 1;
+    while(root.parent != null){
+      root = root.parent;
+      root.childnum = root.childnum + 1;
+    }
+  }
+  function Search(node, id){
+    if(node.data.id == id){
+      return node;
+    }
+    else if(node.children.length > 0){
+      var i;
+      var result = null;
+      for(i=0; result==null && i<node.children.length; i++){
+        result = Search(node.children[i], id);
+      }
+      return result;
+    }
+    return null;
+  }
+  function Change(root, id, data){
+    var node = Search(root, id);
+    if(node == null){
+      alert('there is no such node');
+    }
+    node.data = data;
+  }
+  function Delete(root, id){
+    var node = Search(root, id);
+    if(node == null){
+      alert('there is no such node');
+    }
+    var parent_node = node.parent;
+    for(var i=0; i<parent_node.children.length; i++){
+      if(parent_node.children[i].data.id == id){
+        break;
+      }
+    }
+    parent_node.children.remove(i);
+  }
+  function Render(root){
+    createTextBox(root.data.graphic);
+    if(root.children.lenght > 0){
+      var graphic = jquery.extend({}, root.data.graphic)
+      graphic.y = root.data.graphic.y + 80;
+      for(var i=0; i<root.children.lenght; i++){
+        graphic.x = root.data.graphic.x - (parseInt((root.children[i].childnum - 1)/2) + 0.5)*120;
+        graphic.x = graphic.x + i*120;
+        graphic.text = root.children[i].data.name;
+        if('graphic' in root.children[i].data){
+          graphic.color = root.children[i].data.graphic.color;
+        }
+        root.children[i].data.graphic = graphic;
+        drawline(root.data.graphic.x + root.data.graphic.width/2, root.data.graphic.y + root.data.graphic.height, graphic.x + graphic.width/2, graphic.y);
+        Render(root.children[i]);
+      }
+    }
+  }
+</script>
+<script>
+  var canvas;
+  var context;
+  window.onload = function(){
+    canvas = document.getElementById("canvas");
+    if(canvas == null || canvas.getContext == null)
+      return;
+    context = canvas.getContext("2d");
+
+    var tree = create_rootnode();
+    tree.data.graphic = {
+      x:canvas.width/2, y:0, width:80, height:50,
+      color: "dodgerBlue",
+      text: "Main Window", textColor" "black", textSize"20, exit:false
+    }
+
+    var data = {id:1, name:'upload'};
+    add_node(data, tree);
+
+    var data = {id:2, name:'search'};
+    add_node(data, tree);
+
+    var data = {id:3, name:'edit'};
+    add_node(data, tree);
+
+    var data = {id:4, name:'select_photo'};
+    var node = Search(tree, 1);
+    add_node(data, node);
+
+    var data = {id:5, name:'edit_photo'};
+    var node = Search(tree, 1);
+    add_node(data, node);
+
+    var data = {id:6, name:'cut'};
+    var node = Search(tree, 5);
+    add_node(data, node);
+
+    var data = {id:7, name:'brightness'};
+    var node = Search(tree, 5);
+    add_node(data, node);
+
+    var data = {id:5, name:'size'};
+    var node = Search(tree, 5);
+    add_node(data, node);
+
+    var data = {id:5, name:'edit_photo'};
+    var node = Search(tree, 1);
+    add_node(data, node);
+
+    Render(tree);
+  }
+</script>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <canvas id="canvas" width="800" height="800">
+  </canvas>
+</body>
+</html>
