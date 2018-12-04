@@ -90,8 +90,9 @@ image: /assets/images/contact.jpg
       context.fillstyle = g.textColor;
       context.strokeRect(g.x, g.y, g.width, g.height);
     } else {
+      context.fillstyle = g.textColor;
+      context.strokeRect(g.x, g.y, g.width, g.height);
       context.fillStyle = g.backColor;
-
       context.fillRect(g.x, g.y, g.width, g.height);
     }
     if (g.exit == true) {
