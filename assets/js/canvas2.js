@@ -288,7 +288,7 @@
         }
       }
     }
-----------------------------------------------------------------------------------------------
+    
 function renderGraphic(node) {
   if (node.data.type == 'window') {
     createWindow(node);
