@@ -447,8 +447,121 @@ image: /assets/images/contact.jpg
       var node = new Node(data);
       add_node(node, tree.children[1]);
     }
-    //var s_node = search_node(tree, 11);
-    //renderGraphic(s_node);
+  }
+</script><script>
+  Array.prototype.remove = function(from, to) {
+    var rest = this.slice((to || from) + 1 || this.length);
+    this.length = from < 0 ? this.length + from : from;
+    return this.push.apply(this, rest);
+  };
+</script>
+<script>
+  function Node2(data) {
+    this.data = data;
+    this.Childnum = 0;
+    this.parent = null;
+    this.children = [];
+  }
+  function Create_root(){
+    var data = {id:0,name:'root',
+                graphic:{x:0,y:0,width:100,height:50, color:'dodgerBlue'}};
+	  var root = new Node(data);
+    return root;
+  }
+  function Add_node(data, root){
+	  var node = new Node(data);
+    root.children.push(node);
+    node.parent = root;
+    root.Childnum += 1;
+    while(root.parent != null){
+      root = root.parent;
+      root.Childnum += 1;
+    }
+  }
+  function Search_node(node,id){
+    if(node.data.id == id){
+  	  return node;
+    }
+    else if(node.children.length > 0){
+  	  var i;
+      var result = null;
+      for(i = 0; result == null && i < node.children.length; i ++){
+    	  result = Search_node(node.children[i], id);
+      }
+  	  return result;
+    }
+	  return null;
+  }
+  function Change_node(root, id ,data){
+    var node = Search_node(root, id);
+    if(node == null){
+  	  alert('there is no node to delete');
+    }
+    node.data = data;
+  }
+  function Delete_node(root,id){
+	  var node = Search_node(root, id);
+    if(node == null){
+  	  alert('there is no node to delete');
+    }
+    var parent_node = node.parent;
+    for(var i = 0; i<parent_node.children.length; i ++){
+  	  if(parent_node.children[i].data.id == id){
+    	  break;
+      }
+    }
+    parent_node.children.remove(i);
+  }
+  function Render(root){
+    createTextBox(root.data.graphic);
+    if(root.children.length > 0){
+      var graphic = jQuery.extend({}, root.data.graphic)
+      graphic.y = root.data.graphic.y + 80;
+      for(var i =0; i<root.children.length; i ++){
+        graphic.x = root.data.graphic.x - (parseInt((root.children[i].Childnum-1)/2) + 0.5) * 120;
+        graphic.x += (i) * 120;
+        graphic.text = root.children[i].data.name;
+        if('graphic' in root.children[i].data){
+          graphic.color = root.children[i].data.graphic.color;
+        }
+        root.children[i].data.graphic = graphic;
+        drawline(root.data.graphic.x+root.data.graphic.width/2,
+                 root.data.graphic.y+root.data.graphic.height,
+                 graphic.x + graphic.width/2,
+                 graphic.y);
+        Render(root.children[i]);
+      }
+    }
+  }
+</script>
+<script>
+  var canvas3;
+  var context3;
+  window.onload = function() {
+    canvas3 = document.getElementById("canvas3");
+    if (canvas3 == null || canvas.getContext == null) return;
+      context3 = canvas3.getContext("2d");
+
+  var tree2 = Create_root();
+  tree.data.graphic = {
+    x:canvas.width/2, y:100, width:100, height:40,
+    color:"dodgerBlue",
+    text:"Main window", textColor:"black", textSize:12,
+    exit:false}
+
+  var data = {id:1,name:'File Menu'};
+  Add_node(data, tree2);
+  var data = {id:2,name:'Edit Menu'};
+  Add_node(data, tree2);
+  var data = {id:3,name:'Added Box'};
+  Add_node(data, tree2);
+  var data = {id:4,name:'Button1'};
+  var node = Search_node(tree2, 1);
+  Add_node(data, node);
+  var data = {id:5,name:'Button2'};
+  var node = Search_node(tree2, 1);
+  Add_node(data, node);
+  Render(tree2);
   }
 </script>
 
@@ -457,7 +570,8 @@ image: /assets/images/contact.jpg
 </head>
 
 <body>
-  <canvas id="canvas1" width="500" height="500" style = "top: 0px; left: 0px; position:absolute; z-index: 1"></canvas>
-  <canvas id="canvas2" width="500" height="500" style = "top: 0px; left: 0px; position:absolute; z-index: -1"></canvas>
+  <canvas id="canvas1" width="500" height="500" style = "top: 800px; left: 200px; position:absolute; z-index: 1"></canvas>
+  <canvas id="canvas2" width="500" height="500" style = "top: 800px; left: 200px; position:absolute; z-index: -1"></canvas>
+  <canvas id="canvas3" width="500" height="500" style = "top: 1500px; left: 200px; position:absolute"></canvas>
 </body>
 <div style = "margin-bottom: 600px"></div>
