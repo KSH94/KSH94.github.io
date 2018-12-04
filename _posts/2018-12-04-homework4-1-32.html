@@ -552,7 +552,8 @@ image: /assets/images/contact.jpg
           graphic.color = root.children[i].data.graphic.color;
         }
         root.children[i].data.graphic = graphic;
-        drawline(root.data.graphic.x+root.data.graphic.width/2,
+        drawline(context3,
+                 root.data.graphic.x+root.data.graphic.width/2,
                  root.data.graphic.y+root.data.graphic.height,
                  graphic.x + graphic.width/2,
                  graphic.y);
