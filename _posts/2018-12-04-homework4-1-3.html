@@ -9,10 +9,21 @@ image: /assets/images/contact.jpg
 <script>
   var canvas;
   var context;
+  var canvas1;
+  var context1;
+  var canvas2;
+  var context2;
   window.onload = function() {
     canvas = document.getElementById("canvas");
     if (canvas == null || canvas.getContext == null) return;
       context = canvas.getContext("2d");
+    canvas1 = document.getElementById("canvas1");
+    if (canvas1 == null || canvas1.getContext == null) return;
+      context1 = canvas1.getContext("2d");
+
+    canvas2 = document.getElementById("canvas2");
+    if (canvas2 == null || canvas2.getContext == null) return;
+      context2 = canvas2.getContext("2d");
 
   var tree = Create_root();
   tree.data.graphic = {
@@ -35,8 +46,156 @@ image: /assets/images/contact.jpg
   Add_node(data, node);
   Render(tree);
 }
+
+  var tree2 = Create_root();
+  tree2.data.graphic = {
+    context:context1,
+    canvas:canvas1,
+    x: 0,
+    y: 0,
+    width: canvas1.width,
+    height: canvas1.height,
+    backColor: "white",
+    textColor: "dimgrey",
+    title: "Top Window",
+    titleSize: 20,
+    text: "hello world",
+    textSize: 16,
+    lineHeight: 70,
+    exit: true
+  };
+  renderGraphic(tree2);
+
+  var data = {
+    id: 1,
+    name: 'FileMenu',
+    type: 'menu',
+    graphic: {
+      context:context1,
+      canvas:canvas1,
+      x: 2,
+      y: 1,
+      width: 80,
+      height: 26,
+      backColor: "lightpink",
+      textColor: "white",
+      title: "",
+      titleSize: 0,
+      text: "File",
+      textSize: 14,
+      menuList: ["F1", "F2", 'F3'],
+      exit: false
+    }
+  }
+  var node = new Node(data);
+  add_node(node, tree2);
+  renderGraphic(tree2.children[0]);
+
+  var data = {
+    id: 2,
+    name: 'EditMenu',
+    type: 'menu',
+    graphic: {
+      context:context1,
+      canvas:canvas1,
+      x: 84,
+      y: 1,
+      width: 80,
+      height: 26,
+      backColor: "lightpink",
+      textColor: "white",
+      title: "",
+      titleSize: 0,
+      text: "Edit",
+      textSize: 14,
+      menuList: ["E1", "E2"],
+      exit: false
+    }
+  }
+  var node = new Node(data);
+  add_node(node, tree2);
+  renderGraphic(tree2.children[1]);
+
+  var data = {
+      id: 3,
+      name: 'Dialog',
+      type: 'button',
+      graphic: {
+        context:context1,
+        canvas:canvas1,
+        x: 400,
+        y: 400,
+        width: 100,
+        height: 30,
+        backColor: "plum",
+        textColor: "white",
+        title: "",
+        titleSize: 0,
+        text: "GoTo",
+        textSize: 14,
+        exit: false,
+        dialog: true
+      }
+    }
+    var node = new Node(data);
+    Add_node(node, tree2);
+    renderGraphic(tree2.children[2]);
+
+    for (var i = 1; i <= 3; i++) {
+      var data = {
+        id: 10 + i,
+        name: 'FileText1',
+        type: 'button',
+        graphic: {
+          context:context2,
+          canvas:canvas2,
+          x: 30,
+          y: 150 + i *30,
+          width: 150,
+          height: 50,
+          backColor: "lightskyblue",
+          textColor: "white",
+          title: "",
+          titleSize: 0,
+          text: "File" + i.toString(),
+          textSize: 14,
+          exit: true,
+          alert: true
+        }
+      }
+      var node = new Node(data);
+      Add_node(node, tree2.children[0]);
+    }
+
+    for (var i = 1; i <= 2; i++) {
+      var data = {
+        id: 20 + i,
+        name: 'EditText',
+        type: 'button',
+        graphic: {
+          context:context2,
+          canvas:canvas2,
+					x: 300,
+          y: 150 + i *30,
+          width: 150,
+          height: 50,
+          backColor: "lightsalmon",
+          textColor: "white",
+          title: "",
+          titleSize: 0,
+          text: "Edit" + i.toString(),
+          textSize: 14,
+          exit: true,
+          alert: true
+        }
+      }
+      var node = new Node(data);
+      Add_node(node, tree2.children[1]);
+    }
+  }
 </script>
 
+<!--
 <script>
   window.onload = function() {
     canvas1 = document.getElementById("canvas1");
@@ -142,6 +301,7 @@ image: /assets/images/contact.jpg
     }
   }
 </script>
+-->
 <head>
 	<meta charset="utf-8">
 	<title>Tree ADT</title>
