@@ -539,6 +539,14 @@ image: /assets/images/contact.jpg
     context3.fillText(text,x+width/2,y+height/2);
   }
 
+  function Drawline(x1,y1,x2,y2, color){
+    context3.beginPath();
+    context3.moveTo(x1,y1);
+    context3.lineTo(x2,y2);
+    context3.strokeStyle = color;
+    context3.stroke();
+    context3.closePath();
+  }
   function Render(root){
     CreateTextBox(root.data.graphic);
     if(root.children.length > 0){
@@ -552,8 +560,7 @@ image: /assets/images/contact.jpg
           graphic.color = root.children[i].data.graphic.color;
         }
         root.children[i].data.graphic = graphic;
-        drawline(context3,
-                 root.data.graphic.x+root.data.graphic.width/2,
+        Drawline(root.data.graphic.x+root.data.graphic.width/2,
                  root.data.graphic.y+root.data.graphic.height,
                  graphic.x + graphic.width/2,
                  graphic.y);
