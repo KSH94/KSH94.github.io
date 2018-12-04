@@ -524,19 +524,19 @@ image: /assets/images/contact.jpg
     var textSize  = myTextBox.textSize;
     var exit = myTextBox.exit;
 
-    context.fillStyle = color;
-    context.fillRect(x,y,width,height);
-    context.strokeRect(x,y,width,height);
+    context3.fillStyle = color;
+    context3.fillRect(x,y,width,height);
+    context3.strokeRect(x,y,width,height);
 
     if(exit == true){
       dButton = {x:x+width-25, y:y, width:25, height:25};
       deleteWindow(dButton,myTextBox);
     }
-    context.fillStyle = textColor;
+    context3.fillStyle = textColor;
     var font_size = width/10;
-    context.font =  textSize.toString() + "px Arial";
-    context.textAlign = "center";
-    context.fillText(text,x+width/2,y+height/2);
+    context3.font =  textSize.toString() + "px Arial";
+    context3.textAlign = "center";
+    context3.fillText(text,x+width/2,y+height/2);
   }
 
   function Render(root){
