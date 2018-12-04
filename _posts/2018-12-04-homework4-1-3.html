@@ -22,25 +22,22 @@ image: /assets/images/contact.jpg
     text:"Main window", textColor:"black", textSize:12,
     exit:false}
 
-  var data = {id:1,name:'Upload'};
+  var data = {id:1,name:'File Menu'};
   Add_node(data, tree);
-  var data = {id:2,name:'Search'};
+  var data = {id:2,name:'Edit Menu'};
   Add_node(data, tree);
-  var data = {id:3,name:'Edit'};
+  var data = {id:3,name:'Added Box'};
   Add_node(data, tree);
-  var data = {id:4,name:'Select_ph'};
+  var data = {id:4,name:'Button1'};
   var node = Search_node(tree, 1);
   Add_node(data, node);
-  var data = {id:5,name:'Edit_ph'};
+  var data = {id:5,name:'Button2'};
   var node = Search_node(tree, 1);
   Add_node(data, node);
-  var data = {id:6,name:'Upload_ph'};
-  var node = Search_node(tree, 1);
+  var data = {id:6,name:'Button1'};
+  var node = Search_node(tree, 2);
   Add_node(data, node);
-  var data = {id:7,name:'Brightness'};
-  var node = Search_node(tree, 5);
-  Add_node(data, node);
-  var data = {id:8,name:'Size'};
+  var data = {id:7,name:'Button2'};
   var node = Search_node(tree, 5);
   Add_node(data, node);
   Render(tree);
