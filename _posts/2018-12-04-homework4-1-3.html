@@ -8,7 +8,6 @@ image: /assets/images/contact.jpg
 
 <script type="text/javascript"></script>
 <script>
-  // Tree ADT
   function Node(data) {
     this.data = data;
     this.numChild = 0;
@@ -40,7 +39,6 @@ image: /assets/images/contact.jpg
       root.numChild += 1;
     }
   }
-  //search node by id
   function search_node(node, id) {
     if (node.data.id == id) {
       return node;
@@ -74,7 +72,6 @@ image: /assets/images/contact.jpg
     }
     p_node.children.remove(i);
   }
-  //Graphics ADT
   function renderGraphic(node) {
     if (node.data.type == 'window') {
       createWindow(node);
@@ -106,13 +103,10 @@ image: /assets/images/contact.jpg
       };
       deletionWindow(dButton, node);
     }
-    //Text
     context.fillStyle = g.textColor;
-    //Title
     context.font = g.titleSize.toString() + "px Arial";
     context.textAlign = "center";
     context.fillText(g.title, g.x + g.width / 2, g.y + g.lineHeight / 2);
-    //Body
     context.font = g.textSize.toString() + "px Arial";
     context.textAlign = "center";
     context.fillText(g.text, g.x + g.width / 2, g.y + g.height / 2);
@@ -127,11 +121,9 @@ image: /assets/images/contact.jpg
       context.closePath();
   }
 
-  //Graphical Components
   function createWindow(node) {
     var g = node.data.graphic;
     init(node);
-    //Title & Content Division Line
     drawline(g.context,g.x, g.y + g.lineHeight, g.x + g.width, g.y + g.lineHeight, "dimgrey");
   }
   function createTextBox(node) {
@@ -141,11 +133,9 @@ image: /assets/images/contact.jpg
   function createButton(node) {
     var g = node.data.graphic;
     init(node);
-    //Alert Event
     if (g.alert == true) {
       AlertEvent(node);
     }
-    //Call Child Event
     if (g.createChild == true) {
       CreateChildEvent(node);
     }
@@ -157,39 +147,29 @@ image: /assets/images/contact.jpg
   function createMenu(node) {
     var g = node.data.graphic;
     init(node);
-    //Add Menu button
     mButton = {
       x: g.x,
       y: g.y,
-      width: 25,
+      width: 75,
       height: 25
     };
     menuWindow(mButton, node);
   }
-  //Event Components
   function deletionWindow(dButton, node) {
     var g = node.data.graphic;
     var context = node.data.graphic.context;
     var d = dButton;
-    //Deletion Graphic Components
     context.fillStyle = "lightcoral";
     context.fillRect(d.x, d.y, d.width, d.height);
     drawline(context,5, 5, 10, 10);
     drawline(context,d.x + 3, d.y + 3, d.x + d.width - 3, d.y + d.height - 3, "white");
     drawline(context,d.x + d.width - 3, d.y + 3, d.x + 3, d.y + d.height - 3, "white");
-    //Deletion Event Handler
     DeletionEvent(dButton, node);
   }
   function menuWindow(mButton, node) {
     var g = node.data.graphic;
     var m = mButton;
-    var context = g.context;
-    //Menu Graphic Components
-    context.fillStyle = "lightgrey";
-    context.fillRect(m.x, m.y, m.width, m.height);
-    drawline(context,m.x, m.y + m.height / 2, m.x + m.width, m.y + m.height / 2, "white");
-    drawline(context,m.x + m.width / 2, m.y + m.height, m.x + m.width / 2, m.y, "white");
-    //Drop-down Event Handler
+    var context = g.context;7
     MenuEvent(m, node);
   }
 
@@ -205,7 +185,6 @@ image: /assets/images/contact.jpg
       };
   }
 
-  //Event Handler
   function DeletionEvent(dButton, node) {
     var g = node.data.graphic;
     var canvas = node.data.graphic.canvas;
@@ -220,7 +199,6 @@ image: /assets/images/contact.jpg
       }
     }, false);
   }
-	//Alert to make sure the lowest element should be closed frist
   function AlertEvent(node) {
     var g = node.data.graphic;
     var canvas = node.data.graphic.canvas;
@@ -302,16 +280,11 @@ image: /assets/images/contact.jpg
           var p_g = node.parent.data.graphic;
           drawline(context,g.x, p_g.y + p_g.lineHeight, g.x + g.width / 2 + 2,
             p_g.y + p_g.lineHeight, "dimgrey");
-          //renderGraphic(node.parent); //pseudo-event
-          //for(var j = 0; j<node.parent.numChild;j++){
-          //	renderGraphic(node.parent.children[j]);
-          //}
           clicked = false;
         }
       }
     }, false);
   }
-  //MAIN
 </script>
 <script>
   Array.prototype.remove = function(from, to) {
