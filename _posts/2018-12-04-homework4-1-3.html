@@ -258,7 +258,7 @@ image: /assets/images/contact.jpg
     if (canvas2 == null || canvas2.getContext == null) return;
       context2 = canvas2.getContext("2d");
 
-      var tree = create_root();
+      var tree = Create_root();
       tree.data.graphic = {
         context:context1,
         canvas:canvas1,
@@ -275,7 +275,7 @@ image: /assets/images/contact.jpg
         lineHeight: 70,
         exit: true
       };
-      renderGraphic(tree);
+
       var data = {
           id: 3,
           name: 'Dialog',
@@ -299,8 +299,7 @@ image: /assets/images/contact.jpg
         }
         var node = new Node(data);
         Add_node(node, tree);
-        renderGraphic(tree.children[2]);
-        //File Items
+
         for (var i = 1; i <= 3; i++) {
           var data = {
             id: 10 + i,
@@ -327,7 +326,6 @@ image: /assets/images/contact.jpg
           Add_node(node, tree.children[0]);
         }
 
-        //Edit Items
         for (var i = 1; i <= 2; i++) {
           var data = {
             id: 20 + i,
@@ -353,8 +351,6 @@ image: /assets/images/contact.jpg
           var node = new Node(data);
           Add_node(node, tree.children[1]);
         }
-        //var s_node = search_node(tree, 11);
-        //renderGraphic(s_node);
       }
 </script>
 
