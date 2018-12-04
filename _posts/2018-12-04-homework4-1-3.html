@@ -5,8 +5,7 @@ date:   2018-12-04 21:15:05 +0000
 image: /assets/images/contact.jpg
 
 ---
-<script type="text/javascript" src="/assets/js/canvas.js"></script>
-<script>
+<script type="text/javascript" src="/assets/js/canvas.js">
   var canvas;
   var context;
   window.onload = function() {
@@ -32,12 +31,6 @@ image: /assets/images/contact.jpg
   Add_node(data, node);
   var data = {id:5,name:'Button2'};
   var node = Search_node(tree, 1);
-  Add_node(data, node);
-  var data = {id:6,name:'Button1'};
-  var node = Search_node(tree, 2);
-  Add_node(data, node);
-  var data = {id:7,name:'Button2'};
-  var node = Search_node(tree, 2);
   Add_node(data, node);
   Render(tree);
 }
