@@ -7,27 +7,30 @@ image: /assets/images/contact.jpg
 ---
 <script type="text/javascript" src="/assets/js/canvas2.js"></script>
 <script>
-  var canvas;
-  var context;
+
+</script>
+<script>
   var canvas1;
   var context1;
   var canvas2;
   var context2;
+  var canvas3;
+  var context3;
   window.onload = function() {
-    canvas = document.getElementById("canvas");
-    if (canvas == null || canvas.getContext == null) return;
-      context = canvas.getContext("2d");
     canvas1 = document.getElementById("canvas1");
     if (canvas1 == null || canvas1.getContext == null) return;
       context1 = canvas1.getContext("2d");
-
     canvas2 = document.getElementById("canvas2");
     if (canvas2 == null || canvas2.getContext == null) return;
       context2 = canvas2.getContext("2d");
 
+    canvas3 = document.getElementById("canvas3");
+    if (canvas3 == null || canvas3.getContext == null) return;
+      context3 = canvas3.getContext("2d");
+
   var tree = Create_root();
   tree.data.graphic = {
-    x:canvas.width/2, y:100, width:100, height:40,
+    x:canvas1.width/2, y:100, width:100, height:40,
     color:"dodgerBlue",
     text:"Main window", textColor:"black", textSize:12,
     exit:false}
@@ -48,12 +51,12 @@ image: /assets/images/contact.jpg
 
   var tree2 = Create_root();
   tree2.data.graphic = {
-    context:context1,
-    canvas:canvas1,
+    context:context2,
+    canvas:canvas2,
     x: 0,
     y: 0,
-    width: canvas1.width,
-    height: canvas1.height,
+    width: canvas2.width,
+    height: canvas2.height,
     backColor: "white",
     textColor: "dimgrey",
     title: "Top Window",
@@ -70,8 +73,8 @@ image: /assets/images/contact.jpg
     name: 'FileMenu',
     type: 'menu',
     graphic: {
-      context:context1,
-      canvas:canvas1,
+      context:context2,
+      canvas:canvas2,
       x: 2,
       y: 1,
       width: 80,
@@ -95,8 +98,8 @@ image: /assets/images/contact.jpg
     name: 'EditMenu',
     type: 'menu',
     graphic: {
-      context:context1,
-      canvas:canvas1,
+      context:context2,
+      canvas:canvas2,
       x: 84,
       y: 1,
       width: 80,
@@ -120,8 +123,8 @@ image: /assets/images/contact.jpg
       name: 'Dialog',
       type: 'button',
       graphic: {
-        context:context1,
-        canvas:canvas1,
+        context:context2,
+        canvas:canvas2,
         x: 400,
         y: 400,
         width: 100,
@@ -146,8 +149,8 @@ image: /assets/images/contact.jpg
         name: 'FileText1',
         type: 'button',
         graphic: {
-          context:context2,
-          canvas:canvas2,
+          context:context3,
+          canvas:canvas3,
           x: 30,
           y: 150 + i *30,
           width: 150,
@@ -172,8 +175,8 @@ image: /assets/images/contact.jpg
         name: 'EditText',
         type: 'button',
         graphic: {
-          context:context2,
-          canvas:canvas2,
+          context:context3,
+          canvas:canvas3,
 					x: 300,
           y: 150 + i *30,
           width: 150,
