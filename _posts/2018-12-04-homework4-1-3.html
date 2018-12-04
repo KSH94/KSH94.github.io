@@ -218,7 +218,7 @@ image: /assets/images/contact.jpg
     canvas1 = document.getElementById("canvas1");
     if (canvas1 == null || canvas1.getContext == null) return;
       context1 = canvas1.getContext("2d");
-      
+
     canvas2 = document.getElementById("canvas2");
     if (canvas2 == null || canvas2.getContext == null) return;
       context2 = canvas2.getContext("2d");
@@ -250,101 +250,101 @@ image: /assets/images/contact.jpg
   var node = Search_node(tree, 2);
   Add_node(data, node);
   Render(tree);
-  }
-      var tree = Create_root();
-      tree.data.graphic = {
+
+  var tree = Create_root();
+  tree.data.graphic = {
+    context:context1,
+    canvas:canvas1,
+    x: 0,
+    y: 0,
+    width: canvas1.width,
+    height: canvas1.height,
+    backColor: "white",
+    textColor: "dimgrey",
+    title: "Top Window",
+    titleSize: 20,
+    text: "hello world",
+    textSize: 16,
+    lineHeight: 70,
+    exit: true
+  };
+
+  var data = {
+      id: 3,
+      name: 'Dialog',
+      type: 'button',
+      graphic: {
         context:context1,
         canvas:canvas1,
-        x: 0,
-        y: 0,
-        width: canvas1.width,
-        height: canvas1.height,
-        backColor: "white",
-        textColor: "dimgrey",
-        title: "Top Window",
-        titleSize: 20,
-        text: "hello world",
-        textSize: 16,
-        lineHeight: 70,
-        exit: true
-      };
+        x: 400,
+        y: 400,
+        width: 100,
+        height: 30,
+        backColor: "plum",
+        textColor: "white",
+        title: "",
+        titleSize: 0,
+        text: "GoTo",
+        textSize: 14,
+        exit: false,
+        dialog: true
+      }
+    }
+    var node = new Node(data);
+    Add_node(node, tree);
 
+    for (var i = 1; i <= 3; i++) {
       var data = {
-          id: 3,
-          name: 'Dialog',
-          type: 'button',
-          graphic: {
-            context:context1,
-            canvas:canvas1,
-            x: 400,
-            y: 400,
-            width: 100,
-            height: 30,
-            backColor: "plum",
-            textColor: "white",
-            title: "",
-            titleSize: 0,
-            text: "GoTo",
-            textSize: 14,
-            exit: false,
-            dialog: true
-          }
-        }
-        var node = new Node(data);
-        Add_node(node, tree);
-
-        for (var i = 1; i <= 3; i++) {
-          var data = {
-            id: 10 + i,
-            name: 'FileText1',
-            type: 'button',
-            graphic: {
-              context:context2,
-              canvas:canvas2,
-              x: 30,
-              y: 150 + i *30,
-              width: 150,
-              height: 50,
-              backColor: "lightskyblue",
-              textColor: "white",
-              title: "",
-              titleSize: 0,
-              text: "File" + i.toString(),
-              textSize: 14,
-              exit: true,
-              alert: true
-            }
-          }
-          var node = new Node(data);
-          Add_node(node, tree.children[0]);
-        }
-
-        for (var i = 1; i <= 2; i++) {
-          var data = {
-            id: 20 + i,
-            name: 'EditText',
-            type: 'button',
-            graphic: {
-              context:context2,
-              canvas:canvas2,
-    					x: 300,
-              y: 150 + i *30,
-              width: 150,
-              height: 50,
-              backColor: "lightsalmon",
-              textColor: "white",
-              title: "",
-              titleSize: 0,
-              text: "Edit" + i.toString(),
-              textSize: 14,
-              exit: true,
-              alert: true
-            }
-          }
-          var node = new Node(data);
-          Add_node(node, tree.children[1]);
+        id: 10 + i,
+        name: 'FileText1',
+        type: 'button',
+        graphic: {
+          context:context2,
+          canvas:canvas2,
+          x: 30,
+          y: 150 + i *30,
+          width: 150,
+          height: 50,
+          backColor: "lightskyblue",
+          textColor: "white",
+          title: "",
+          titleSize: 0,
+          text: "File" + i.toString(),
+          textSize: 14,
+          exit: true,
+          alert: true
         }
       }
+      var node = new Node(data);
+      Add_node(node, tree.children[0]);
+    }
+
+    for (var i = 1; i <= 2; i++) {
+      var data = {
+        id: 20 + i,
+        name: 'EditText',
+        type: 'button',
+        graphic: {
+          context:context2,
+          canvas:canvas2,
+					x: 300,
+          y: 150 + i *30,
+          width: 150,
+          height: 50,
+          backColor: "lightsalmon",
+          textColor: "white",
+          title: "",
+          titleSize: 0,
+          text: "Edit" + i.toString(),
+          textSize: 14,
+          exit: true,
+          alert: true
+        }
+      }
+      var node = new Node(data);
+      Add_node(node, tree.children[1]);
+    }
+  }
 </script>
 
 <head>
