@@ -111,6 +111,11 @@
     };
   }
 
+  function isInside(pos, rect) {
+      return (pos.x > rect.x && pos.x < rect.x + rect.width &&
+          pos.y < rect.y + rect.height && pos.y > rect.y)
+  }
+
   function getMousePos(canvas, event) {
     var rect = canvas.getBoundingClientRect();
     return {
@@ -148,10 +153,6 @@
     AddMenuEvent(mButton, rect);
     drawline(mButton.x,mButton.y+mButton.height/2,mButton.x+mButton.width,mButton.y+mButton.height/2, "white");
     drawline(mButton.x + mButton.width/2,mButton.y+mButton.height,mButton.x+mButton.width/2,mButton.y, "white");
-  }
-
-  function isInside(pos, rect){
-    return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
   }
 
   function AddDeletionEvent(dButton,rect){
@@ -203,3 +204,87 @@
       }
     }, false);
   }
+
+
+    Array.prototype.remove = function(from, to) {
+      var rest = this.slice((to || from) + 1 || this.length);
+      this.length = from < 0 ? this.length + from : from;
+      return this.push.apply(this, rest);
+    };
+    function Node(data) {
+      this.data = data;
+      this.Childnum = 0;
+      this.parent = null;
+      this.children = [];
+    }
+    function Create_root(){
+      var data = {id:0,name:'root',
+                  graphic:{x:0,y:0,width:100,height:50, color:'dodgerBlue'}};
+  	  var root = new Node(data);
+      return root;
+    }
+    function Add_node(data, root){
+  	  var node = new Node(data);
+      root.children.push(node);
+      node.parent = root;
+      root.Childnum += 1;
+      while(root.parent != null){
+        root = root.parent;
+        root.Childnum += 1;
+      }
+    }
+    function Search_node(node,id){
+      if(node.data.id == id){
+    	  return node;
+      }
+      else if(node.children.length > 0){
+    	  var i;
+        var result = null;
+        for(i = 0; result == null && i < node.children.length; i ++){
+      	  result = Search_node(node.children[i], id);
+        }
+    	  return result;
+      }
+  	  return null;
+    }
+    function Change_node(root, id ,data){
+      var node = Search_node(root, id);
+      if(node == null){
+    	  alert('there is no node to delete');
+      }
+      node.data = data;
+    }
+    function Delete_node(root,id){
+  	  var node = Search_node(root, id);
+      if(node == null){
+    	  alert('there is no node to delete');
+      }
+      var parent_node = node.parent;
+      for(var i = 0; i<parent_node.children.length; i ++){
+    	  if(parent_node.children[i].data.id == id){
+      	  break;
+        }
+      }
+      parent_node.children.remove(i);
+    }
+    function Render(root){
+      createTextBox(root.data.graphic);
+      if(root.children.length > 0){
+        var graphic = jQuery.extend({}, root.data.graphic)
+        graphic.y = root.data.graphic.y + 80;
+        for(var i =0; i<root.children.length; i ++){
+          graphic.x = root.data.graphic.x - (parseInt((root.children[i].Childnum-1)/2) + 0.5) * 120;
+          graphic.x += (i) * 120;
+          graphic.text = root.children[i].data.name;
+          if('graphic' in root.children[i].data){
+            graphic.color = root.children[i].data.graphic.color;
+          }
+          root.children[i].data.graphic = graphic;
+          drawline(root.data.graphic.x+root.data.graphic.width/2,
+                   root.data.graphic.y+root.data.graphic.height,
+                   graphic.x + graphic.width/2,
+                   graphic.y);
+          Render(root.children[i]);
+        }
+      }
+    }
