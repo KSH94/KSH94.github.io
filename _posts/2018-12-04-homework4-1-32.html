@@ -465,11 +465,11 @@ image: /assets/images/contact.jpg
   function Create_root(){
     var data = {id:0,name:'root',
                 graphic:{x:0,y:0,width:100,height:50, color:'dodgerBlue'}};
-	  var root = new Node(data);
+	  var root = new Node2(data);
     return root;
   }
   function Add_node(data, root){
-	  var node = new Node(data);
+	  var node = new Node2(data);
     root.children.push(node);
     node.parent = root;
     root.Childnum += 1;
