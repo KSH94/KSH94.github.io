@@ -217,19 +217,6 @@ image: /assets/images/contact.jpg
     }, false);
   }
 
-  function DialogEvent(node) {
-  	var g = node.data.graphic;
-    var canvas = g.canvas;
-    var context = g.context;
-    canvas.addEventListener('click', function(evt) {
-      var mousePos = getMousePos(canvas, evt);
-      if (isInside(mousePos, g) == true) {
-  			var url = prompt("url:", "https://www.naver.com");
-        if(url)
-        	window.open(url);
-  		}
-    }, false);
-  }
   function CreateChildEvent(node) {
     var g = node.data.graphic;
     canvas = g.canvas;
@@ -263,7 +250,7 @@ image: /assets/images/contact.jpg
                 context: context,
                 x: g.x,
                 y: g.y + (g.height + 1) * (i + 1),
-                width: g.width / 2,
+                width: g.width,
                 height: g.height,
                 backColor: g.backColor,
                 textColor: g.textColor,
