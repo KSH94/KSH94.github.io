@@ -288,16 +288,16 @@
         }
       }
     }
-    
+
 function renderGraphic(node) {
   if (node.data.type == 'window') {
-    createWindow(node);
+    creationWindow(node);
   } else if (node.data.type == 'button') {
-    createButton(node);
+    creationButton(node);
   } else if (node.data.type == 'text') {
-    createTextBox(node);
+    creationTextBox(node);
   } else if (node.data.type == 'menu') {
-    createMenu(node);
+    creationMenu(node);
   }
 }
 
