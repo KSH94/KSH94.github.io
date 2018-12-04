@@ -512,8 +512,35 @@ image: /assets/images/contact.jpg
     }
     parent_node.children.remove(i);
   }
+
+  function CreateTextBox(myTextBox){
+    var x = myTextBox.x;
+    var y = myTextBox.y;
+    var width = myTextBox.width;
+    var height = myTextBox.height;
+    var color  = myTextBox.color;
+    var text  = myTextBox.text;
+    var textColor = myTextBox.textColor;
+    var textSize  = myTextBox.textSize;
+    var exit = myTextBox.exit;
+
+    context.fillStyle = color;
+    context.fillRect(x,y,width,height);
+    context.strokeRect(x,y,width,height);
+
+    if(exit == true){
+      dButton = {x:x+width-25, y:y, width:25, height:25};
+      deleteWindow(dButton,myTextBox);
+    }
+    context.fillStyle = textColor;
+    var font_size = width/10;
+    context.font =  textSize.toString() + "px Arial";
+    context.textAlign = "center";
+    context.fillText(text,x+width/2,y+height/2);
+  }
+
   function Render(root){
-    createTextBox(root.data.graphic);
+    CreateTextBox(root.data.graphic);
     if(root.children.length > 0){
       var graphic = jQuery.extend({}, root.data.graphic)
       graphic.y = root.data.graphic.y + 80;
