@@ -185,6 +185,13 @@ image: /assets/images/contact.jpg
       };
   }
 
+  function getMousePos(canvas, event) {
+      var rect = canvas.getBoundingClientRect();
+      return {
+          x: event.clientX - rect.left,
+          y: event.clientY - rect.top
+      };
+  }
   function DeletionEvent(dButton, node) {
     var g = node.data.graphic;
     var canvas = node.data.graphic.canvas;
