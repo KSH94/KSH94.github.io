@@ -159,7 +159,7 @@ image: /assets/images/contact.jpg
     var g = node.data.graphic;
     var context = node.data.graphic.context;
     var d = dButton;
-    context.fillStyle = "lightcoral";
+    context.fillStyle = "bloack";
     context.fillRect(d.x, d.y, d.width, d.height);
     drawline(context,5, 5, 10, 10);
     drawline(context,d.x + 3, d.y + 3, d.x + d.width - 3, d.y + d.height - 3, "white");
@@ -454,10 +454,10 @@ image: /assets/images/contact.jpg
       width: canvas1.width,
       height: canvas1.height,
       backColor: "white",
-      textColor: "dimgrey",
-      title: "Top Window",
+      textColor: "black",
+      title: "Main Window",
       titleSize: 20,
-      text: "hello world",
+      text: "",
       textSize: 16,
       lineHeight: 70,
       exit: true
@@ -481,7 +481,7 @@ image: /assets/images/contact.jpg
         titleSize: 0,
         text: "File",
         textSize: 14,
-        menuList: ["F1", "F2", 'F3'],
+        menuList: ["F1", "F2"],
         exit: false
       }
     }
