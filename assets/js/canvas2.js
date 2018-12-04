@@ -8,19 +8,19 @@
       var title  = myWindow.title;
       var textColor = myWindow.textColor;
 
-      context.fillStyle = color;
-      context.fillRect(x,y,width,height);
+      context1.fillStyle = color;
+      context1.fillRect(x,y,width,height);
 
       dButton = {x:x+width-25, y:y, width:25, height:25};
       deleteWindow(dButton,myWindow);
       hButton = {x:x+width-50, y:y, width:25, height:25};
       hideWindow(hButton,myWindow);
 
-      context.fillStyle = textColor;
+      context1.fillStyle = textColor;
       var font_size = width/10;
-      context.font = font_size.toString() + "px Arial";
-      context.textAlign = "center";
-      context.fillText(title,x+width/2,y+height/6);
+      context1.font = font_size.toString() + "px Arial";
+      context1.textAlign = "center";
+      context1.fillText(title,x+width/2,y+height/6);
 
       drawline(x,y+height/5,x+width,y+height/5, "ivory");
     }
@@ -34,19 +34,19 @@
       var text  = myButton.text;
       var textColor = myButton.textColor;
 
-      context.fillStyle = color;
-      context.fillRect(x,y,width,height);
+      context1.fillStyle = color;
+      context1.fillRect(x,y,width,height);
 
       AddAlertEvent(myButton);
 
       dButton = {x:x+width-25, y:y, width:25, height:25};
       deleteWindow(dButton,myButton);
 
-      context.fillStyle = textColor;
+      context1.fillStyle = textColor;
       var font_size = width/10;
-      context.font = font_size.toString() + "px Arial";
-      context.textAlign = "center";
-      context.fillText(text,x+width/2,y+height/2);
+      context1.font = font_size.toString() + "px Arial";
+      context1.textAlign = "center";
+      context1.fillText(text,x+width/2,y+height/2);
     }
 
     function createTextBox(myTextBox){
@@ -60,19 +60,19 @@
       var textSize  = myTextBox.textSize;
       var exit = myTextBox.exit;
 
-      context.fillStyle = color;
-      context.fillRect(x,y,width,height);
-      context.strokeRect(x,y,width,height);
+      context1.fillStyle = color;
+      context1.fillRect(x,y,width,height);
+      context1.strokeRect(x,y,width,height);
 
       if(exit == true){
         dButton = {x:x+width-25, y:y, width:25, height:25};
         deleteWindow(dButton,myTextBox);
       }
-      context.fillStyle = textColor;
+      context1.fillStyle = textColor;
       var font_size = width/10;
-      context.font =  textSize.toString() + "px Arial";
-      context.textAlign = "center";
-      context.fillText(text,x+width/2,y+height/2);
+      context1.font =  textSize.toString() + "px Arial";
+      context1.textAlign = "center";
+      context1.fillText(text,x+width/2,y+height/2);
     }
 
     function createMenu(myMenu){
@@ -86,8 +86,8 @@
       var textSize  = myMenu.textSize;
       var menuList = myMenu.menuList;
 
-      context.fillStyle = color;
-      context.fillRect(x,y,width,height);
+      context1.fillStyle = color;
+      context1.fillRect(x,y,width,height);
 
       dButton = {x:x+width-25, y:y, width:25, height:25};
       deleteWindow(dButton,myMenu);
@@ -95,11 +95,11 @@
       mButton = {x:x, y:y, width:25, height:25};
       menuWindow(mButton,myMenu);
 
-      context.fillStyle = textColor;
+      context1.fillStyle = textColor;
       var font_size = width/10;
-      context.font =  textSize.toString() + "px Arial";
-      context.textAlign = "center";
-      context.fillText(text,x+width/2,y+height/2);
+      context1.font =  textSize.toString() + "px Arial";
+      context1.textAlign = "center";
+      context1.fillText(text,x+width/2,y+height/2);
     }
 
 
@@ -125,12 +125,12 @@
   }
 
   function drawline(x1,y1,x2,y2, color){
-    context.beginPath();
-    context.moveTo(x1,y1);
-    context.lineTo(x2,y2);
-    context.strokeStyle = color;
-    context.stroke();
-    context.closePath();
+    context1.beginPath();
+    context1.moveTo(x1,y1);
+    context1.lineTo(x2,y2);
+    context1.strokeStyle = color;
+    context1.stroke();
+    context1.closePath();
   }
 
 
@@ -333,7 +333,7 @@ function init(node) {
 function creationWindow(node) {
   var g = node.data.graphic;
   init(node);
-  drawline(g.context,g.x, g.y + g.lineHeight, g.x + g.width, g.y + g.lineHeight, "dimgrey");
+  Drawline(g.context,g.x, g.y + g.lineHeight, g.x + g.width, g.y + g.lineHeight, "dimgrey");
 }
 
 function creationTextBox(node) {
@@ -373,9 +373,9 @@ function deletionWindow(dButton, node) {
   var d = dButton;
   context.fillStyle = "lightcoral";
   context.fillRect(d.x, d.y, d.width, d.height);
-  drawline(context,5, 5, 10, 10);
-  drawline(context,d.x + 3, d.y + 3, d.x + d.width - 3, d.y + d.height - 3, "white");
-  drawline(context,d.x + d.width - 3, d.y + 3, d.x + 3, d.y + d.height - 3, "white");
+  Drawline(context,5, 5, 10, 10);
+  Drawline(context,d.x + 3, d.y + 3, d.x + d.width - 3, d.y + d.height - 3, "white");
+  Drawline(context,d.x + d.width - 3, d.y + 3, d.x + 3, d.y + d.height - 3, "white");
   DeletionEvent(dButton, node);
 }
 
@@ -385,8 +385,8 @@ function menuWindow(mButton, node) {
   var context = g.context;
   context.fillStyle = "lightgrey";
   context.fillRect(m.x, m.y, m.width, m.height);
-  drawline(context,m.x, m.y + m.height / 2, m.x + m.width, m.y + m.height / 2, "white");
-  drawline(context,m.x + m.width / 2, m.y + m.height, m.x + m.width / 2, m.y, "white");
+  Drawline(context,m.x, m.y + m.height / 2, m.x + m.width, m.y + m.height / 2, "white");
+  Drawline(context,m.x + m.width / 2, m.y + m.height, m.x + m.width / 2, m.y, "white");
   MenuEvent(m, node);
 }
 
@@ -486,7 +486,7 @@ function MenuEvent(mButton, node) {
         context.clearRect(g.x, g.y + (g.height + 1),
           g.width / 2 + 1, (g.height + 1) * (g.menuList.length));
         var p_g = node.parent.data.graphic;
-        drawline(context,g.x, p_g.y + p_g.lineHeight, g.x + g.width / 2 + 2,
+        Drawline(context,g.x, p_g.y + p_g.lineHeight, g.x + g.width / 2 + 2,
           p_g.y + p_g.lineHeight, "dimgrey");
         clicked = false;
       }
@@ -494,7 +494,7 @@ function MenuEvent(mButton, node) {
   }, false);
 }
 
-function drawline(context, x1, y1, x2, y2, color) {
+function Drawline(context, x1, y1, x2, y2, color) {
     context.beginPath();
     context.moveTo(x1, y1);
     context.lineTo(x2, y2);
