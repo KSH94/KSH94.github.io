@@ -11,8 +11,8 @@ image: /assets/images/contact.jpg
   var context;
   window.onload = function() {
     canvas = document.getElementById("canvas");
-    if (canvas == null || canvas1.getContext == null) return;
-      context = canvas1.getContext("2d");
+    if (canvas == null || canvas.getContext == null) return;
+      context = canvas.getContext("2d");
 
   var tree = Create_root();
   tree.data.graphic = {
