@@ -525,15 +525,15 @@ image: /assets/images/contact.jpg
         titleSize: 0,
         text: "sub window",
         textSize: 14,
-        exit: false,
+        exit: true,
         dialog: true
       }
     }
     var node = new Node(data);
     add_node(node, tree);
     renderGraphic(tree.children[2]);
-    //File Items
-    for (var i = 1; i <= 3; i++) {
+
+    for (var i = 1; i <= 2; i++) {
       var data = {
         id: 10 + i,
         name: 'FileText1',
@@ -545,8 +545,8 @@ image: /assets/images/contact.jpg
           y: 150 + i *30,
           width: 150,
           height: 50,
-          backColor: "lightskyblue",
-          textColor: "white",
+          backColor: "white",
+          textColor: "black",
           title: "",
           titleSize: 0,
           text: "File" + i.toString(),
@@ -558,34 +558,6 @@ image: /assets/images/contact.jpg
       var node = new Node(data);
       add_node(node, tree.children[0]);
     }
-
-    //Edit Items
-    for (var i = 1; i <= 2; i++) {
-      var data = {
-        id: 20 + i,
-        name: 'EditText',
-        type: 'button',
-        graphic: {
-          context:context2,
-          canvas:canvas2,
-					x: 300,
-          y: 150 + i *30,
-          width: 150,
-          height: 50,
-          backColor: "lightsalmon",
-          textColor: "white",
-          title: "",
-          titleSize: 0,
-          text: "Edit" + i.toString(),
-          textSize: 14,
-          exit: true,
-          alert: true
-        }
-      }
-      var node = new Node(data);
-      add_node(node, tree.children[1]);
-    }
-  }
 </script>
 
 <head>
