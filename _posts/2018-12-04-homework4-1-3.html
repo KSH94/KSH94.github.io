@@ -270,9 +270,9 @@ image: /assets/images/contact.jpg
           clicked = true;
         } else {
           context.clearRect(g.x, g.y + (g.height + 1),
-            g.width / 2 + 1, (g.height + 1) * (g.menuList.length));
+            g.width + 1, (g.height + 1) * (g.menuList.length));
           var p_g = node.parent.data.graphic;
-          drawline(context,g.x, p_g.y + p_g.lineHeight, g.x + g.width / 2 + 2,
+          drawline(context,g.x, p_g.y + p_g.lineHeight, g.x + g.width + 2,
             p_g.y + p_g.lineHeight, "dimgrey");
           clicked = false;
         }
